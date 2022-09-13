@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
 import axios from "axios";
 
 export default function Signup() {
@@ -60,10 +60,10 @@ export default function Signup() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const reponse = await axios.get(
+        const response = await axios.get(
           `http://localhost:8000/api/v1/users/enumvalues`
         );
-        setEnumValues(reponse.data.data);
+        setEnumValues(response.data.data);
       } catch (error) {
         console.error(error);
       }
@@ -86,7 +86,7 @@ export default function Signup() {
         about: user.about,
         contactInfo: user.contactInfo,
       });
-      toast.success('Account created successfully')
+      toast.success("Account created successfully");
       navigate("/login");
     } catch (error) {
       setErrorMessage(error.response.data.error);
@@ -95,6 +95,7 @@ export default function Signup() {
 
   return (
     <div id="signup">
+      <h2>Create a new account</h2>
       <form onSubmit={handleSubmit}>
         <label>Full name</label>
         <input
@@ -167,8 +168,8 @@ export default function Signup() {
           cols="50"
           name="about"
           value={user.about}
-          onChange={handleChange}>
-        </textarea>
+          onChange={handleChange}
+        ></textarea>
         <label>Social Media Links</label>
         <input
           required

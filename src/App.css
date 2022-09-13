@@ -10,7 +10,7 @@
 
 /* Sinup View */
 
-#signup form {
+#signup form, #edit-profile form {
   display: flex;
   flex-direction: column;
 }
