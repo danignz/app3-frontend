@@ -1,3 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .selected {
   color: red;
+}
+
+/* Sinup View */
+
+#signup form {
+  display: flex;
+  flex-direction: column;
 }
