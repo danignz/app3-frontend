@@ -34,7 +34,7 @@ export default function Signup() {
     uploadData.append("profileImage", e.target.files[0]);
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}/auth/signupupload`,
+        `${process.env.REACT_APP_API_URL}/auth/signup-upload`,
         uploadData
       );
       setUser((prev) => {
@@ -61,7 +61,7 @@ export default function Signup() {
     const getData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/v1/users/enumvalues`
+          `http://localhost:8000/api/v1/users/enum-values`
         );
         setEnumValues(response.data.data);
       } catch (error) {
