@@ -49,7 +49,7 @@ export default function EditProfile() {
     const getData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/v1/users/enum-values`
+          `${process.env.REACT_APP_API_URL}/users/enum-values`
         );
         setEnumValues(response.data.data);
       } catch (error) {
