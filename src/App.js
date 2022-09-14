@@ -12,6 +12,7 @@ import EditProfile from "./views/EditProfile"
 import Main from './views/Main';
 import ProjectsFinished from "./views/ProjectsFinished";
 import ProjectsRecruiting from "./views/ProjectsRecruiting"
+import ProjectDetails from './views/ProjectDetails';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         </Route>
         <Route path="/private" element={<IsPrivate><PrivateView/></IsPrivate>}/>
         <Route path="/edit-profile" element={<IsPrivate><EditProfile/></IsPrivate>}/>
+        <Route path="/project/:id" element={<IsPrivate><ProjectDetails/></IsPrivate>}/>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>

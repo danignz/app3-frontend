@@ -143,7 +143,7 @@ export default function Signup() {
         >
           {enumValues &&
             enumValues.profession.map((element) => (
-              <option key={element} value={element} selected={user.profession}>
+              <option key={element} value={element}>
                 {element}
               </option>
             ))}
@@ -152,7 +152,7 @@ export default function Signup() {
         <select value={user.location} name="location" onChange={handleChange}>
           {enumValues &&
             enumValues.location.map((element) => (
-              <option key={element} value={element} selected={user.location}>
+              <option key={element} value={element}>
                 {element}
               </option>
             ))}

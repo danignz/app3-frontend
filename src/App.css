@@ -10,7 +10,12 @@
 
 /* Sinup View */
 
-#signup form, #edit-profile form {
+#signup form,
+#edit-profile form {
   display: flex;
   flex-direction: column;
+}
+
+p {
+  white-space: pre;
 }

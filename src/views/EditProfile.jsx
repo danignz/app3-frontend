@@ -134,7 +134,7 @@ export default function EditProfile() {
         >
           {enumValues &&
             enumValues.profession.map((element) => (
-              <option key={element} value={element} selected={user.profession}>
+              <option key={element} value={element}>
                 {element}
               </option>
             ))}
@@ -147,7 +147,7 @@ export default function EditProfile() {
         >
           {enumValues &&
             enumValues.location.map((element) => (
-              <option key={element} value={element} selected={user.location}>
+              <option key={element} value={element}>
                 {element}
               </option>
             ))}
