@@ -92,7 +92,9 @@ export default function EditProfile() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`${process.env.REACT_APP_API_URL}/users/edit`, userData, { headers: { Authorization: `Bearer ${storedToken}` } });
+      await axios.put(`${process.env.REACT_APP_API_URL}/users/edit`, userData, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      });
       toast.success("User edited successfully. Please log in again.");
       logOutUser();
       navigate("/login");
@@ -104,11 +106,7 @@ export default function EditProfile() {
   return (
     <div id="edit-profile">
       <h2>Editing {userData.fullName}'s profile</h2>
-      <img 
-      src={user.profileImage}
-      alt={`${user.fullName}'s pic`}
-      width={100}
-      />
+      <img src={user.profileImage} alt={`${user.fullName}'s pic`} width={100} />
       <form onSubmit={handleSubmit}>
         <label>Full name</label>
         <input
@@ -136,16 +134,20 @@ export default function EditProfile() {
         >
           {enumValues &&
             enumValues.profession.map((element) => (
-              <option key={element} value={element}>
+              <option key={element} value={element} selected={user.profession}>
                 {element}
               </option>
             ))}
         </select>
         <label>Location</label>
-        <select value={userData.location} name="location" onChange={handleChange}>
+        <select
+          value={userData.location}
+          name="location"
+          onChange={handleChange}
+        >
           {enumValues &&
             enumValues.location.map((element) => (
-              <option key={element} value={element}>
+              <option key={element} value={element} selected={user.location}>
                 {element}
               </option>
             ))}
@@ -167,15 +169,13 @@ export default function EditProfile() {
           value={userData.about}
           onChange={handleChange}
         ></textarea>
-        <label>Social Media Links</label>
-        <textarea
-          required
-          rows="6"
-          cols="50"
+        <label>Social Media Links (maximum 3)</label>
+        <input
+          type="text"
           name="contactInfo"
           value={userData.contactInfo}
           onChange={handleChange}
-        ></textarea>
+        />
         <button type="submit">Save changes and log out</button>
       </form>
       {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}

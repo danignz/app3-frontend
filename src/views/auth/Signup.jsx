@@ -8,8 +8,8 @@ export default function Signup() {
     fullName: "",
     email: "",
     profileImage: "",
-    profession: "",
-    location: "",
+    profession: "Web Developer",
+    location: "Amsterdam",
     headLine: "",
     about: "",
     contactInfo: "",
@@ -104,6 +104,7 @@ export default function Signup() {
           name="fullName"
           value={user.fullName}
           onChange={handleChange}
+          placeholder="e.g.: John Doe"
         />
         <label>Email</label>
         <input
@@ -112,6 +113,7 @@ export default function Signup() {
           name="email"
           value={user.email}
           onChange={handleChange}
+          placeholder="mail@example.com"
         />
         <label>Password</label>
         <input
@@ -120,6 +122,7 @@ export default function Signup() {
           name="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          placeholder="MySecurePassword1234"
         />
         <label>Repeat the password</label>
         <input
@@ -128,6 +131,7 @@ export default function Signup() {
           name="passwordControl"
           value={passwordControl}
           onChange={(e) => setPasswordControl(e.target.value)}
+          placeholder="MySecurePassword1234"
         />
         <label>Profile picture</label>
         <input type="file" onChange={(e) => handleFileUpload(e)} />
@@ -139,7 +143,7 @@ export default function Signup() {
         >
           {enumValues &&
             enumValues.profession.map((element) => (
-              <option key={element} value={element}>
+              <option key={element} value={element} selected={user.profession}>
                 {element}
               </option>
             ))}
@@ -148,7 +152,7 @@ export default function Signup() {
         <select value={user.location} name="location" onChange={handleChange}>
           {enumValues &&
             enumValues.location.map((element) => (
-              <option key={element} value={element}>
+              <option key={element} value={element} selected={user.location}>
                 {element}
               </option>
             ))}
@@ -160,6 +164,7 @@ export default function Signup() {
           name="headLine"
           value={user.headLine}
           onChange={handleChange}
+          placeholder="e.g.: Frontend and Mobile developer"
         />
         <label>About</label>
         <textarea
@@ -169,14 +174,15 @@ export default function Signup() {
           name="about"
           value={user.about}
           onChange={handleChange}
+          placeholder="e.g.: I am a Front End Developer with experience building and maintaining websites in the E-commerce industry..."
         ></textarea>
-        <label>Social Media Links</label>
+        <label>Social Media Links (maximum 3)</label>
         <input
-          required
           type="text"
           name="contactInfo"
           value={user.contactInfo}
           onChange={handleChange}
+          placeholder="https://linkedin.com/in/example,https://twitter.com/example"
         />
         <button type="submit">Register</button>
       </form>
