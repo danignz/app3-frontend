@@ -41,7 +41,7 @@ export default function ProjectDetailsCard({ projectData }) {
 
       <button
         className="btn-style3"
-        onClick={() => navigate(`/request-created/${projectData._id}`)}
+        onClick={() => navigate(`/create-request/${projectData._id}`)}
       >
         JOIN
       </button>
