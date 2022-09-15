@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function ProjectCard({ projectData }) {
+  const navigate = useNavigate();
   return (
     <div>
       <h2>{projectData.name}</h2>
@@ -16,7 +17,13 @@ export default function ProjectCard({ projectData }) {
       />
       <p>{projectData.description.substr(0, 200) + "..."}</p>
       <p>Start: {new Date(projectData["startDate"]).toDateString()}</p>
-      <Link to={`/project/${projectData._id}`}>DETAIL</Link>
+
+      <button
+        className="btn-style3"
+        onClick={() => navigate(`/project/${projectData._id}`)}
+      >
+        DETAIL
+      </button>
     </div>
   );
 }
