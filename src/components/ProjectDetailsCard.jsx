@@ -39,12 +39,14 @@ export default function ProjectDetailsCard({ projectData }) {
           );
         })}
 
-      <button
-        className="btn-style3"
-        onClick={() => navigate(`/create-request/${projectData._id}`)}
-      >
-        JOIN
-      </button>
+      {projectData.status !== "Closed" && (
+        <button
+          className="btn-style3"
+          onClick={() => navigate(`/create-request/${projectData._id}`)}
+        >
+          JOIN
+        </button>
+      )}
     </div>
   );
 }
