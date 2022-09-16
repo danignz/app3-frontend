@@ -19,3 +19,14 @@
 p {
   white-space: pre;
 }
+
+/* Manager Requests View */
+
+td {
+  text-align: center;
+  padding: 10px;
+}
+
+th {
+  padding: 0 20px;
+}

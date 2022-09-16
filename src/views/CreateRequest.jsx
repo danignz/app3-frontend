@@ -33,12 +33,11 @@ export default function CreateRequest() {
       {request && (
         <div>
           <h2>Your request have been successfully sended</h2>
-          <h3>{`Id new request ${request._id}`}</h3>
           <button
             className="btn-style3"
-            onClick={() => navigate(`/requests/${request._id}`)}
+            onClick={() => navigate(`/manage-requests`)}
           >
-            VIEW MY REQUEST
+            VIEW MY REQUESTS
           </button>
         </div>
       )}
@@ -47,10 +46,7 @@ export default function CreateRequest() {
         <div>
           <h2>There was a problem doing the request:</h2>
           {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-          <button
-            className="btn-style3"
-            onClick={() => navigate(`/main`)}
-          >
+          <button className="btn-style3" onClick={() => navigate(`/main`)}>
             {String.fromCharCode(8592)} Back
           </button>
         </div>
