@@ -49,7 +49,7 @@ export default function CreateRequest() {
           {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
           <button
             className="btn-style3"
-            onClick={() => navigate(`/main/projects-recruiting`)}
+            onClick={() => navigate(`/main`)}
           >
             {String.fromCharCode(8592)} Back
           </button>

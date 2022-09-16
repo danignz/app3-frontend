@@ -7,8 +7,6 @@ import Signup from './views/auth/Signup';
 import IsPrivate from './components/IsPrivate';
 import EditProfile from "./views/EditProfile"
 import Main from './views/Main';
-import ProjectsFinished from "./views/ProjectsFinished";
-import ProjectsRecruiting from "./views/ProjectsRecruiting"
 import ProjectDetails from './views/ProjectDetails';
 import CreateRequest from './views/CreateRequest';
 import UserDetails from './views/UserDetails';
@@ -20,10 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/main" element={<IsPrivate><Main /></IsPrivate>}>
-          <Route path="projects-recruiting" element={<IsPrivate><ProjectsRecruiting /></IsPrivate>} />
-          <Route path="projects-finished" element={<IsPrivate><ProjectsFinished /></IsPrivate>} />
-        </Route>
+        <Route path="/main" element={<IsPrivate><Main/></IsPrivate>}/>
         <Route path="/edit-profile" element={<IsPrivate><EditProfile/></IsPrivate>}/>
         <Route path="/project/:id" element={<IsPrivate><ProjectDetails/></IsPrivate>}/>
         <Route path="/create-request/:id" element={<IsPrivate><CreateRequest/></IsPrivate>}/>
