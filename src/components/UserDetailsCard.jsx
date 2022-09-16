@@ -8,7 +8,7 @@ export default function UserDetailsCard({ userData }) {
   const { user } = useContext(AuthContext);
 
   return (
-    <div>
+    <div id="user-details-card">
       <img
         height={200}
         src={userData.profileImage}

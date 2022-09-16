@@ -64,9 +64,7 @@ export default function ManageRequests() {
   return (
     <div>
       <Navbar />
-      <h3>Manage requests</h3>
-
-      <div>
+      <div id="manage-colaborators-requests">
         <h2>Collaborators who want to join to your project</h2>
         {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         {incomingRequests.length !== 0 && (
@@ -142,7 +140,7 @@ export default function ManageRequests() {
         )}
       </div>
 
-      <div>
+      <div id="manage-my-requests">
         <h2>Status of your request to join a project</h2>
 
         {myRequests.length !== 0 && (
@@ -176,7 +174,17 @@ export default function ManageRequests() {
                       </Link>
                     </td>
                     <td>{new Date(elem.createdAt).toLocaleString()}</td>
-                    <td>{elem.status}</td>
+                    <td>
+                      {elem.status === "Pending" && (
+                        <p className={`status-yellow`}>{elem.status}</p>
+                      )}
+                      {elem.status === "Denied" && (
+                        <p className={`status-red`}>{elem.status}</p>
+                      )}
+                      {elem.status === "Accepted" && (
+                        <p className={`status-green`}>{elem.status}</p>
+                      )}
+                    </td>
                   </tr>
                 );
               })}

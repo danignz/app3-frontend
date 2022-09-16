@@ -29,9 +29,11 @@ export default function ProjectDetails() {
   return (
     <div>
       <Navbar />
-      <h2>Project details</h2>
-      {project && <ProjectDetailsCard projectData={project} />}
-      {!project && <p>Project not found</p>}
+      <div id="project-details">
+        <h2>Project details</h2>
+        {project && <ProjectDetailsCard projectData={project} />}
+        {!project && <p>Project not found</p>}
+      </div>
     </div>
   );
 }

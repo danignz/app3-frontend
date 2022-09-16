@@ -105,82 +105,88 @@ export default function EditProfile() {
   };
 
   return (
-    <div id="edit-profile">
+    <div>
       <Navbar />
-      <h2>Editing {userData.fullName}'s profile</h2>
-      <img src={user.profileImage} alt={`${user.fullName}'s pic`} width={100} />
-      <form onSubmit={handleSubmit}>
-        <label>Full name</label>
-        <input
-          required
-          type="text"
-          name="fullName"
-          value={userData.fullName}
-          onChange={handleChange}
+      <div id="edit-profile">
+        <h2>Editing {userData.fullName}'s profile</h2>
+        <img
+          src={user.profileImage}
+          alt={`${user.fullName}'s pic`}
+          width={100}
         />
-        <label>Email</label>
-        <input
-          required
-          type="email"
-          name="email"
-          value={userData.email}
-          onChange={handleChange}
-        />
-        <label>Profile picture</label>
-        <input type="file" onChange={(e) => handleFileUpload(e)} />
-        <label>Profession</label>
-        <select
-          value={userData.profession}
-          name="profession"
-          onChange={handleChange}
-        >
-          {enumValues &&
-            enumValues.profession.map((element) => (
-              <option key={element} value={element}>
-                {element}
-              </option>
-            ))}
-        </select>
-        <label>Location</label>
-        <select
-          value={userData.location}
-          name="location"
-          onChange={handleChange}
-        >
-          {enumValues &&
-            enumValues.location.map((element) => (
-              <option key={element} value={element}>
-                {element}
-              </option>
-            ))}
-        </select>
-        <label>Headline</label>
-        <input
-          required
-          type="text"
-          name="headLine"
-          value={userData.headLine}
-          onChange={handleChange}
-        />
-        <label>About</label>
-        <textarea
-          required
-          rows="8"
-          cols="50"
-          name="about"
-          value={userData.about}
-          onChange={handleChange}
-        ></textarea>
-        <label>Social Media Links (maximum 3)</label>
-        <input
-          type="text"
-          name="contactInfo"
-          value={userData.contactInfo}
-          onChange={handleChange}
-        />
-        <button type="submit">Save changes and log out</button>
-      </form>
-      {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+        <form onSubmit={handleSubmit}>
+          <label>Full name</label>
+          <input
+            required
+            type="text"
+            name="fullName"
+            value={userData.fullName}
+            onChange={handleChange}
+          />
+          <label>Email</label>
+          <input
+            required
+            type="email"
+            name="email"
+            value={userData.email}
+            onChange={handleChange}
+          />
+          <label>Profile picture</label>
+          <input type="file" onChange={(e) => handleFileUpload(e)} />
+          <label>Profession</label>
+          <select
+            value={userData.profession}
+            name="profession"
+            onChange={handleChange}
+          >
+            {enumValues &&
+              enumValues.profession.map((element) => (
+                <option key={element} value={element}>
+                  {element}
+                </option>
+              ))}
+          </select>
+          <label>Location</label>
+          <select
+            value={userData.location}
+            name="location"
+            onChange={handleChange}
+          >
+            {enumValues &&
+              enumValues.location.map((element) => (
+                <option key={element} value={element}>
+                  {element}
+                </option>
+              ))}
+          </select>
+          <label>Headline</label>
+          <input
+            required
+            type="text"
+            name="headLine"
+            value={userData.headLine}
+            onChange={handleChange}
+          />
+          <label>About</label>
+          <textarea
+            required
+            rows="8"
+            cols="50"
+            name="about"
+            value={userData.about}
+            onChange={handleChange}
+          ></textarea>
+          <label>Social Media Links (maximum 3)</label>
+          <input
+            type="text"
+            name="contactInfo"
+            value={userData.contactInfo}
+            onChange={handleChange}
+          />
+          <button type="submit">Save changes and log out</button>
+        </form>
+        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+      </div>
     </div>
   );
 }

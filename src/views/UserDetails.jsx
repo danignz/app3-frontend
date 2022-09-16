@@ -29,9 +29,11 @@ export default function UserDetails() {
   return (
     <div>
       <Navbar />
-      <h2>User details</h2>
-      {user && <UserDetailsCard userData={user} />}
-      {!user && <p>User not found</p>}
+      <div id="user-details">
+        <h2>User details</h2>
+        {user && <UserDetailsCard userData={user} />}
+        {!user && <p>User not found</p>}
+      </div>
     </div>
   );
 }

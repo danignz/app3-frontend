@@ -7,7 +7,7 @@ export default function ProjectDetailsCard({ projectData }) {
   const { user } = useContext(AuthContext);
 
   return (
-    <div>
+    <div id="project-details-card">
       <h2>{projectData.name}</h2>
       <h4>
         Leader: {projectData.leader.fullName} {projectData.leader.profession}
@@ -33,8 +33,12 @@ export default function ProjectDetailsCard({ projectData }) {
               {collaboratorGroup.quantity}
               {collaboratorGroup.rol === user.profession &&
                 collaboratorGroup.quantity - collaboratorGroup.users.length !==
-                  0 &&
-                " You can enrole!"}
+                  0 && (
+                  <span style={{ color: "green", fontWeight: "bold" }}>
+                    {" "}
+                    You can enrole!
+                  </span>
+                )}
             </p>
           );
         })}

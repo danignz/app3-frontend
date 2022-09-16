@@ -30,27 +30,29 @@ export default function CreateRequest() {
   return (
     <div>
       <Navbar />
-      {request && (
-        <div>
-          <h2>Your request have been successfully sended</h2>
-          <button
-            className="btn-style3"
-            onClick={() => navigate(`/manage-requests`)}
-          >
-            VIEW MY REQUESTS
-          </button>
-        </div>
-      )}
+      <div id="create-request">
+        {request && (
+          <div>
+            <h2>Your request have been successfully sended</h2>
+            <button
+              className="btn-style3"
+              onClick={() => navigate(`/manage-requests`)}
+            >
+              VIEW MY REQUESTS
+            </button>
+          </div>
+        )}
 
-      {!request && (
-        <div>
-          <h2>There was a problem doing the request:</h2>
-          {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-          <button className="btn-style3" onClick={() => navigate(`/main`)}>
-            {String.fromCharCode(8592)} Back
-          </button>
-        </div>
-      )}
+        {!request && (
+          <div>
+            <h2>There was a problem doing the request:</h2>
+            {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+            <button className="btn-style3" onClick={() => navigate(`/main`)}>
+              {String.fromCharCode(8592)} Back
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

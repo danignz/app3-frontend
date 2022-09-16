@@ -3,6 +3,7 @@ import React, { useState, useContext } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import logogrey from "../images/logogrey.png";
 
 export default function Home() {
   const { storeToken, authenticateUser } = useContext(AuthContext);
@@ -39,35 +40,42 @@ export default function Home() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>Email</label>
-        <input
-          required
-          type="email"
-          name="email"
-          value={user.email}
-          onChange={handleChange}
-        />
-        <label>Password</label>
-        <input
-          required
-          type="password"
-          name="password"
-          value={user.password}
-          onChange={handleChange}
-        />
-        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-        <button type="submit">Log in </button>
-      </form>
-
-      <button
-        className="btn-style3"
-        onClick={() => navigate(`/signup`)}
-      >
-        Sign up
-      </button>
-
+    <div id="home-view">
+      <div>
+        <div>
+          <img src={logogrey} alt="Iron Co-Workers logo" />
+          <h2>
+            Iron Co-Workers helps you improve your portfolio and connect with
+            amazing professionals
+          </h2>
+        </div>
+        <div>
+          <form onSubmit={handleSubmit}>
+            <label>Email</label>
+            <input
+              required
+              type="email"
+              name="email"
+              value={user.email}
+              onChange={handleChange}
+            />
+            <label>Password</label>
+            <input
+              required
+              type="password"
+              name="password"
+              value={user.password}
+              onChange={handleChange}
+            />
+            {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+            <button type="submit">Log in </button>
+          </form>
+          <hr />
+          <button className="btn-style3" onClick={() => navigate(`/signup`)}>
+            Sign up
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

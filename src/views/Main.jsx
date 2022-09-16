@@ -41,20 +41,21 @@ export default function Main() {
   return (
     <div>
       <Navbar />
-      <h3>Main</h3>
-      <div id="orderBtn">
-        <button onClick={getOpenProjects}>Projects Recruiting</button>
-        <button onClick={getClosedProjects}>Projects Finished</button>
+      <div id="main-view">
+        <div>
+          <button onClick={getOpenProjects}>Projects Recruiting</button>
+          <button onClick={getClosedProjects}>Projects Finished</button>
+        </div>
+        {projectsFiltered.length === 0 && (
+          <p>
+            Unfortunately there are no projects that match the search criteria
+          </p>
+        )}
+        {projectsFiltered.length !== 0 &&
+          projectsFiltered.map((project) => {
+            return <ProjectCard key={project._id} projectData={project} />;
+          })}
       </div>
-      {projectsFiltered.length === 0 && (
-        <p>
-          Unfortunately there are no projects that match the search criteria
-        </p>
-      )}
-      {projectsFiltered.length !== 0 &&
-        projectsFiltered.map((project) => {
-          return <ProjectCard key={project._id} projectData={project} />;
-        })}
     </div>
   );
 }

@@ -8,6 +8,143 @@
   color: red;
 }
 
+a {
+  text-decoration: none;
+}
+/* NavBar Component */
+#navbar {
+  display: flex;
+  background-color: red;
+  position: sticky;
+  z-index: 5;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  text-align: right;
+  padding: 15px;
+  border-bottom: 1px solid grey;
+}
+
+#navbar button {
+  width: 100px;
+  height: 40px;
+  margin-top: 10px;
+  font-size: 1em;
+  color: white;
+  font-weight: bold;
+  background-color: black;
+  border-radius: 10px;
+  border: none;
+  margin: 20px;
+}
+
+#navbar ul li:last-child button {
+  background-color: rgb(156, 151, 151);
+}
+
+#navbar ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#navbar ul img {
+  height: 40px;
+}
+
+#navbar ul li {
+  display: inline;
+  margin-right: 30px;
+}
+
+#navbar ul li a {
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+/* Home View */
+
+#home-view {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#home-view div {
+  width: 70vw;
+  height: 50vh;
+  display: flex;
+}
+
+#home-view div div:first-child {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#home-view div div:first-child img {
+  height: 150px;
+  width: 520px;
+}
+
+#home-view div div:first-child h2 {
+  padding: 1%;
+  color: rgb(71, 71, 71);
+}
+
+#home-view div div:nth-child(2) {
+  padding: 2%;
+  width: 40%;
+  height: 100%;
+  background-color: white;
+  border-radius: 10px;
+  display: inline;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#home-view div div:nth-child(2) form {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+#home-view div div:nth-child(2) form input {
+  padding: 10px;
+}
+
+#home-view div div:nth-child(2) form button {
+  width: 100%;
+  height: 40px;
+  margin-top: 10px;
+  font-size: 1em;
+  color: white;
+  font-weight: bold;
+  background-color: blue;
+  border-radius: 10px;
+  border: none;
+}
+
+#home-view div div:nth-child(2) > button {
+  width: 50%;
+  height: 40px;
+  margin-top: 10px;
+  font-size: 1em;
+  color: white;
+  font-weight: bold;
+  background-color: green;
+  border-radius: 10px;
+  border: none;
+}
+
 /* Sinup View */
 
 #signup form,
@@ -20,7 +157,57 @@ p {
   white-space: pre;
 }
 
+/* EditProfile View */
+
+#edit-profile button,
+#signup button {
+  width: 250px;
+  height: 40px;
+  margin-top: 10px;
+  font-size: 1em;
+  color: white;
+  font-weight: bold;
+  background-color: rgb(24, 129, 24);
+  border-radius: 10px;
+  border: none;
+  margin: 20px;
+}
+
+#signup > button {
+  background-color: black;
+  width: 150px;
+}
+
 /* Manager Requests View */
+
+#manage-colaborators-requests,
+#manage-my-requests,
+#edit-profile,
+#signup {
+  padding: 3%;
+}
+
+#manage-colaborators-requests h2,
+#manage-my-requests h2 {
+  margin-bottom: 10px;
+}
+
+#manage-colaborators-requests button:first-child,
+#manage-colaborators-requests button:nth-child(2) {
+  width: 100px;
+  height: 40px;
+  font-size: 1em;
+  color: white;
+  font-weight: bold;
+  background-color: rgb(24, 129, 24);
+  border-radius: 10px;
+  border: none;
+  margin: 5px;
+}
+
+#manage-colaborators-requests button:nth-child(2) {
+  background-color: red;
+}
 
 td {
   text-align: center;
@@ -29,4 +216,193 @@ td {
 
 th {
   padding: 0 20px;
+}
+
+.status-red {
+  color: white;
+  background-color: red;
+  padding: 5px;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+
+.status-green {
+  color: white;
+  background-color: green;
+  padding: 5px;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+
+.status-yellow {
+  color: white;
+  background-color: #ff8c00;
+  padding: 5px;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+
+/* Main View */
+
+#main-view {
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#main-view div:first-child {
+  display: flex;
+  justify-content: center;
+}
+
+#main-view div > button:first-child,
+#main-view div > button:nth-child(2) {
+  width: 250px;
+  height: 40px;
+  margin-top: 10px;
+  font-size: 1em;
+  color: white;
+  font-weight: bold;
+  background-color: rgb(24, 129, 24);
+  border-radius: 10px;
+  border: none;
+  margin: 20px;
+}
+
+#main-view div > button:nth-child(2) {
+  background-color: rgb(1, 24, 87);
+}
+
+#main-view div > button:nth-child(2):hover {
+  background-color: rgb(50, 99, 235);
+  color: rgb(173, 98, 0);
+}
+
+#main-view div > button:first-child:hover {
+  background-color: #7ee682;
+  color: rgb(173, 98, 0);
+}
+
+/* ProjectCard Component */
+
+#project-card {
+  padding: 3%;
+  border: 1px solid rgb(0, 0, 0);
+  width: 60%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  margin: 10px;
+  border-radius: 20px;
+}
+
+#project-card p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#project-card button {
+  width: 200px;
+  height: 40px;
+  margin-top: 10px;
+  font-size: 1em;
+  color: white;
+  font-weight: bold;
+  background-color: blue;
+  border-radius: 10px;
+  border: none;
+}
+
+/* Project Details View */
+
+#project-details {
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Create Request View */
+
+#create-request {
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#create-request h2 {
+  margin-bottom: 20px;
+}
+
+#create-request button {
+  width: 200px;
+  height: 40px;
+  margin-top: 40px;
+  font-size: 1em;
+  color: white;
+  font-weight: bold;
+  background-color: rgb(5, 5, 5);
+  border-radius: 10px;
+  border: none;
+}
+
+#user-details {
+  padding: 3%;
+}
+
+#user-details-card {
+  padding: 3%;
+  border: 1px solid rgb(0, 0, 0);
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  margin: 10px;
+  border-radius: 20px;
+}
+
+#user-details-card p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#user-details-card button {
+  width: 200px;
+  height: 40px;
+  margin-top: 10px;
+  font-size: 1em;
+  color: white;
+  font-weight: bold;
+  background-color: blue;
+  border-radius: 10px;
+  border: none;
+}
+
+/* ProjectCard Component */
+
+#project-details-card {
+  padding: 3%;
+  border: 1px solid rgb(0, 0, 0);
+  width: 60%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  margin: 10px;
+  border-radius: 20px;
+}
+
+#project-details-card p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#project-details-card button {
+  width: 200px;
+  height: 40px;
+  margin-top: 10px;
+  font-size: 1em;
+  color: white;
+  font-weight: bold;
+  background-color: blue;
+  border-radius: 10px;
+  border: none;
 }
