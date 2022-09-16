@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import ProjectDetailsCard from "../components/ProjectDetailsCard";
+import Navbar from "../components/Navbar";
 
 export default function ProjectDetails() {
   const { id } = useParams();
@@ -27,6 +28,7 @@ export default function ProjectDetails() {
 
   return (
     <div>
+      <Navbar />
       <h2>Project details</h2>
       {project && <ProjectDetailsCard projectData={project} />}
       {!project && <p>Project not found</p>}

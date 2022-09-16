@@ -87,7 +87,7 @@ export default function Signup() {
         contactInfo: user.contactInfo,
       });
       toast.success("Account created successfully");
-      navigate("/login");
+      navigate("/");
     } catch (error) {
       setErrorMessage(error.response.data.error);
     }
@@ -95,7 +95,7 @@ export default function Signup() {
 
   return (
     <div id="signup">
-      <h2>Create a new account</h2>
+      <h2>Create an account</h2>
       <form onSubmit={handleSubmit}>
         <label>Full name</label>
         <input
@@ -187,6 +187,9 @@ export default function Signup() {
         <button type="submit">Register</button>
       </form>
       {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+      <button className="btn-style3" onClick={() => navigate(`/`)}>
+        {String.fromCharCode(8592)} Back
+      </button>
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
 import toast from "react-hot-toast";
+import Navbar from "../components/Navbar";
 
 export default function EditProfile() {
   const navigate = useNavigate();
@@ -97,7 +98,7 @@ export default function EditProfile() {
       });
       toast.success("User edited successfully. Please log in again.");
       logOutUser();
-      navigate("/login");
+      navigate("/");
     } catch (error) {
       setErrorMessage(error.response.data.error);
     }
@@ -105,6 +106,7 @@ export default function EditProfile() {
 
   return (
     <div id="edit-profile">
+      <Navbar />
       <h2>Editing {userData.fullName}'s profile</h2>
       <img src={user.profileImage} alt={`${user.fullName}'s pic`} width={100} />
       <form onSubmit={handleSubmit}>

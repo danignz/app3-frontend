@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import UserDetailsCard from "../components/UserDetailsCard";
+import Navbar from "../components/Navbar";
 
 export default function UserDetails() {
   const { id } = useParams();
@@ -27,6 +28,7 @@ export default function UserDetails() {
 
   return (
     <div>
+      <Navbar />
       <h2>User details</h2>
       {user && <UserDetailsCard userData={user} />}
       {!user && <p>User not found</p>}
