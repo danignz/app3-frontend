@@ -35,7 +35,7 @@ export default function ManageRequests() {
     };
     getData();
     // eslint-disable-next-line
-  }, [incomingRequests]);
+  }, []);
 
   const handleSubmit = async (e, id) => {
     e.preventDefault();
@@ -56,6 +56,7 @@ export default function ManageRequests() {
         }
       );
       toast.success("Action execute successfully");
+      window.location.reload();
     } catch (error) {
       setErrorMessage(error.response.data.error);
     }
