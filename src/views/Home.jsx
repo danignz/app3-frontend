@@ -71,9 +71,7 @@ export default function Home() {
             <button type="submit">Log in </button>
           </form>
           <hr />
-          <button className="btn-style3" onClick={() => navigate(`/signup`)}>
-            Sign up
-          </button>
+          <button onClick={() => navigate(`/signup`)}>Sign up</button>
         </div>
       </div>
     </div>

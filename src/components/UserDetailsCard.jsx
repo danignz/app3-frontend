@@ -24,7 +24,9 @@ export default function UserDetailsCard({ userData }) {
       </p>
       <br />
       {/* <p>{userData.about}</p> */}
-      {userData.about.split('\n').map(sentence => <p>{sentence}</p>)}
+      {userData.about.split("\n").map((sentence, index) => (
+        <p key={index}>{sentence}</p>
+      ))}
       <br />
       {userData.contactInfo &&
         userData.contactInfo.split(",").map((link, index) => {
@@ -37,12 +39,7 @@ export default function UserDetailsCard({ userData }) {
         })}
       <br />
       {user._id === userData._id && (
-        <button
-          className="btn-style3"
-          onClick={() => navigate(`/edit-profile`)}
-        >
-          EDIT
-        </button>
+        <button onClick={() => navigate(`/edit-profile`)}>Edit</button>
       )}
     </div>
   );

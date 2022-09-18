@@ -4,7 +4,7 @@ import ProjectCard from "../components/ProjectCard";
 import axios from "axios";
 
 export default function Main() {
-  const [projects, setprojects] = useState([]);
+  const [projects, setProjects] = useState([]);
   const [projectsFiltered, setProjectsFiltered] = useState([]);
   const storedToken = localStorage.getItem("authToken");
 
@@ -25,7 +25,7 @@ export default function Main() {
           `${process.env.REACT_APP_API_URL}/projects`,
           { headers: { Authorization: `Bearer ${storedToken}` } }
         );
-        setprojects(response.data.data);
+        setProjects(response.data.data);
         const filteredOpen = response.data.data.filter(
           (elem) => elem.status === "Open"
         );

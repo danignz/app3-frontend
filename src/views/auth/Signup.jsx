@@ -187,7 +187,7 @@ export default function Signup() {
         <button type="submit">Register</button>
       </form>
       {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-      <button className="btn-style3" onClick={() => navigate(`/`)}>
+      <button onClick={() => navigate(`/`)}>
         {String.fromCharCode(8592)} Back
       </button>
     </div>

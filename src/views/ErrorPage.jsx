@@ -12,7 +12,7 @@ export default function ErrorPage() {
       <Navbar />
       <p>404 - Page not found</p>
       {!isLoggedIn && (
-        <button className="btn-style3" onClick={() => navigate(`/`)}>
+        <button onClick={() => navigate(`/`)}>
           {String.fromCharCode(8592)} Back
         </button>
       )}

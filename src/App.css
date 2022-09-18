@@ -402,3 +402,8 @@ th {
   border-radius: 10px;
   border: none;
 }
+
+#manage-projects-view {
+  padding: 3%;
+  list-style-position: inside;
+}
