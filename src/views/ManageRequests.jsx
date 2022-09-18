@@ -12,6 +12,7 @@ export default function ManageRequests() {
   const { user } = useContext(AuthContext);
   const myForm = useRef();
   const [errorMessage, setErrorMessage] = useState(undefined);
+  const [errorMessage2, setErrorMessage2] = useState(undefined);
 
   useEffect(() => {
     const getData = async () => {
@@ -59,6 +60,18 @@ export default function ManageRequests() {
       window.location.reload();
     } catch (error) {
       setErrorMessage(error.response.data.error);
+    }
+  };
+
+  const handleRequestDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:8000/api/v1/requests/${id}`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      });
+      toast.success("Request deleted successfully");
+      window.location.reload();
+    } catch (error) {
+      setErrorMessage2(error.response.data.error);
     }
   };
 
@@ -143,7 +156,7 @@ export default function ManageRequests() {
 
       <div id="manage-my-requests">
         <h2>Status of your request to join a project</h2>
-
+        {errorMessage2 && <p style={{ color: "red" }}>{errorMessage2}</p>}
         {myRequests.length !== 0 && (
           <table>
             <thead>
@@ -186,6 +199,13 @@ export default function ManageRequests() {
                         <p className={`status-green`}>{elem.status}</p>
                       )}
                     </td>
+                    {elem.status === "Pending" && (
+                      <td>
+                        <button onClick={() => handleRequestDelete(elem._id)}>
+                          Delete
+                        </button>
+                      </td>
+                    )}
                   </tr>
                 );
               })}
