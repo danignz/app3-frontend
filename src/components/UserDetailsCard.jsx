@@ -23,7 +23,8 @@ export default function UserDetailsCard({ userData }) {
         Graduate: {userData.profession} in {userData.location}
       </p>
       <br />
-      <p>{userData.about}</p>
+      {/* <p>{userData.about}</p> */}
+      {userData.about.split('\n').map(sentence => <p>{sentence}</p>)}
       <br />
       {userData.contactInfo &&
         userData.contactInfo.split(",").map((link, index) => {

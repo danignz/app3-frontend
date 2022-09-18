@@ -18,7 +18,8 @@ export default function ProjectDetailsCard({ projectData }) {
         src={projectData.projectImage}
         alt={`Pic of ${projectData.name}`}
       />
-      <p>{projectData.description}</p>
+      {/* <p>{projectData.description}</p> */}
+      {projectData.description.split('\n').map(sentence => <p>{sentence}</p>)}
       <p>Start: {new Date(projectData["startDate"]).toDateString()}</p>
       <p>End: {new Date(projectData["endDate"]).toDateString()}</p>
       <p>On campus? {projectData.onCampus === true ? "Yes" : "No"}</p>

@@ -15,8 +15,8 @@ export default function ProjectCard({ projectData }) {
         src={projectData.projectImage}
         alt={`Pic of ${projectData.name}`}
       />
-      {/* <p>{projectData.description.substr(0, 200) + "..."}</p> */}
-      <p>{projectData.description}</p>
+      {/* <p>{projectData.description}</p> */}
+      {projectData.description.split('\n').map(sentence => <p>{sentence}</p>)}
       <p>Start: {new Date(projectData["startDate"]).toDateString()}</p>
 
       <button
