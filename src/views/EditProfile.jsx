@@ -96,7 +96,7 @@ export default function EditProfile() {
       await axios.put(`${process.env.REACT_APP_API_URL}/users/edit`, userData, {
         headers: { Authorization: `Bearer ${storedToken}` },
       });
-      toast.success("User edited successfully. Please log in again.");
+      toast.success("User edited successfully. Please log in again.", {duration: 2800});
       logOutUser();
       navigate("/");
     } catch (error) {

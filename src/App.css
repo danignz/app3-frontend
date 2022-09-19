@@ -407,3 +407,22 @@ th {
   padding: 3%;
   list-style-position: inside;
 }
+
+/* Create Project View */
+
+#create-project {
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#create-project h2 {
+  margin-bottom: 20px;
+}
+
+#create-project form {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}

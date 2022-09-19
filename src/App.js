@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import Home from './views/Home';
 import ErrorPage from './views/ErrorPage';
-import Signup from './views/auth/Signup';
+import Signup from './views/Signup';
 import IsPrivate from './components/IsPrivate';
 import EditProfile from "./views/EditProfile"
 import Main from './views/Main';
@@ -12,6 +12,7 @@ import CreateRequest from './views/CreateRequest';
 import UserDetails from './views/UserDetails';
 import ManageRequests from './views/ManageRequests';
 import ManageProjects from './views/ManageProjects';
+import CreateProject from "./views/CreateProject"
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/user/:id" element={<IsPrivate><UserDetails/></IsPrivate>}/>
         <Route path="/manage-requests" element={<IsPrivate><ManageRequests/></IsPrivate>}/>
         <Route path="/manage-projects" element={<IsPrivate><ManageProjects/></IsPrivate>}/>
+        <Route path="/create-project" element={<IsPrivate><CreateProject/></IsPrivate>}/>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>
