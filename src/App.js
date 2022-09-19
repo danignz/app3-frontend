@@ -13,6 +13,7 @@ import UserDetails from './views/UserDetails';
 import ManageRequests from './views/ManageRequests';
 import ManageProjects from './views/ManageProjects';
 import CreateProject from "./views/CreateProject"
+import EditProject from "./views/EditProject"
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/manage-requests" element={<IsPrivate><ManageRequests/></IsPrivate>}/>
         <Route path="/manage-projects" element={<IsPrivate><ManageProjects/></IsPrivate>}/>
         <Route path="/create-project" element={<IsPrivate><CreateProject/></IsPrivate>}/>
+        <Route path="/edit-project/:id" element={<IsPrivate><EditProject/></IsPrivate>}/>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>

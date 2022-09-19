@@ -16,7 +16,7 @@ export default function ProjectDetailsCard({ projectData }) {
       await axios.delete(`http://localhost:8000/api/v1/projects/${id}`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       });
-      toast.success("Project deleted successfully", {duration: 2800});
+      toast.success("Project deleted successfully", { duration: 2800 });
       window.location.reload();
     } catch (error) {
       setErrorMessage(error.response.data.error);
@@ -34,7 +34,7 @@ export default function ProjectDetailsCard({ projectData }) {
           headers: { Authorization: `Bearer ${storedToken}` },
         }
       );
-      toast.success("Action execute successfully", {duration: 2800});
+      toast.success("Action execute successfully", { duration: 2800 });
       window.location.reload();
     } catch (error) {
       setErrorMessage2(error.response.data.error);
@@ -68,7 +68,7 @@ export default function ProjectDetailsCard({ projectData }) {
       ))}
       <p>Start: {new Date(projectData["startDate"]).toDateString()}</p>
       <p>End: {new Date(projectData["endDate"]).toDateString()}</p>
-      <p>On campus? {projectData.onCampus === true ? "Yes" : "No"}</p>
+      <p>On campus? {projectData.onCampus}</p>
       <p>Project url? {projectData.projectUrl}</p>
       <p>Status {projectData.status}</p>
       <p>Vacancies:</p>

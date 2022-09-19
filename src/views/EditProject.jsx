@@ -1,54 +1,67 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
 import toast from "react-hot-toast";
 import Navbar from "../components/Navbar";
+import { useParams } from "react-router-dom";
 
-export default function CreateProject() {
+export default function EditProject() {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const storedToken = localStorage.getItem("authToken");
+  const [enumValues, setEnumValues] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(undefined);
+  const date = new Date();
+
   const [project, setProject] = useState({
-    leader: null,
     name: "",
     projectImage: "",
     startDate: "",
     endDate: "",
     description: "",
     projectUrl: "",
-    onCampus: "No",
-    likes: 0,
-    status: "Open",
+    onCampus: "",
   });
 
-  const [webDevelopers, setWebDevelopers] = useState({
-    rol: "Web Developer",
-    quantity: 0,
-    users: [],
-  });
+  const [webDevelopers, setWebDevelopers] = useState({ quantity: 0 });
+  const [uxuiDesigners, setUxUiDesigners] = useState({ quantity: 0 });
+  const [dataAnalysts, setDataAnalysts] = useState({ quantity: 0 });
+  const [cyberAnalysts, setCyberAnalysts] = useState({ quantity: 0 });
 
-  const [uxuiDesigners, setUxUiDesigners] = useState({
-    rol: "UX/UI Designer",
-    quantity: 0,
-    users: [],
-  });
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.REACT_APP_API_URL}/projects/${id}`,
+          { headers: { Authorization: `Bearer ${storedToken}` } }
+        );
+        setProject(response.data.data);
+        setWebDevelopers(response.data.data.collaborators[0]);
+        setUxUiDesigners(response.data.data.collaborators[1]);
+        setDataAnalysts(response.data.data.collaborators[2]);
+        setCyberAnalysts(response.data.data.collaborators[3]);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    getData();
+    // eslint-disable-next-line
+  }, [id]);
 
-  const [dataAnalysts, setDataAnalysts] = useState({
-    rol: "Data Analyst",
-    quantity: 0,
-    users: [],
-  });
-
-  const [cyberAnalysts, setCyberAnalysts] = useState({
-    rol: "Cybersecurity Analyst",
-    quantity: 0,
-    users: [],
-  });
-
-  const { user } = useContext(AuthContext);
-  const [enumValues, setEnumValues] = useState(null);
-  const storedToken = localStorage.getItem("authToken");
-  const [errorMessage, setErrorMessage] = useState(undefined);
-  const navigate = useNavigate();
-  const date = new Date();
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.REACT_APP_API_URL}/users/enum-values`
+        );
+        setEnumValues(response.data.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    getData();
+    // eslint-disable-next-line
+  }, []);
 
   const handleChange = (e) => {
     setProject((prev) => {
@@ -119,26 +132,11 @@ export default function CreateProject() {
     }
   };
 
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await axios.get(
-          `${process.env.REACT_APP_API_URL}/users/enum-values`
-        );
-        setEnumValues(response.data.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    getData();
-    // eslint-disable-next-line
-  }, []);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}/projects`,
+      const response = await axios.put(
+        `${process.env.REACT_APP_API_URL}/projects/${id}`,
         {
           collaborators: [
             webDevelopers,
@@ -146,7 +144,6 @@ export default function CreateProject() {
             dataAnalysts,
             cyberAnalysts,
           ],
-          leader: user._id,
           name: project.name,
           projectImage: project.projectImage,
           startDate: project.startDate,
@@ -154,12 +151,15 @@ export default function CreateProject() {
           description: project.description,
           projectUrl: project.projectUrl,
           onCampus: project.onCampus,
-          likes: project.likes,
           status: project.status,
         },
-        { headers: { Authorization: `Bearer ${storedToken}` } }
+        {
+          headers: { Authorization: `Bearer ${storedToken}` },
+        }
       );
-      toast.success("Project created successfully", { duration: 2800 });
+      toast.success("Project edited successfully.", {
+        duration: 2800,
+      });
       navigate(`/project/${response.data.data._id}`);
     } catch (error) {
       setErrorMessage(error.response.data.error);
@@ -170,7 +170,7 @@ export default function CreateProject() {
     <div>
       <Navbar />
       <div id="create-project">
-        <h2>Create a project</h2>
+        <h2>Edit project</h2>
         <form onSubmit={handleSubmit}>
           <label>Name</label>
           <input
@@ -186,7 +186,7 @@ export default function CreateProject() {
             required
             type="date"
             name="startDate"
-            value={project.startDate}
+            value={!project.startDate ? "" : project.startDate.slice(0, 10)}
             onChange={handleChange}
             min={date.toJSON().slice(0, 10)}
             max="2025-12-31"
@@ -196,7 +196,7 @@ export default function CreateProject() {
             required
             type="date"
             name="endDate"
-            value={project.endDate}
+            value={!project.endDate ? "" : project.endDate.slice(0, 10)}
             onChange={handleChange}
             min={date.toJSON().slice(0, 10)}
             max="2025-12-31"
@@ -273,10 +273,10 @@ export default function CreateProject() {
             onChange={handleCyberAnalysts}
           ></input>
 
-          <button type="submit">Create</button>
+          <button type="submit">Save changes</button>
         </form>
         {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-        <button onClick={() => navigate(`/manage-projects`)}>
+        <button onClick={() => navigate(`/project/${id}`)}>
           {String.fromCharCode(8592)} Back
         </button>
       </div>
