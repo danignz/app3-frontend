@@ -47,7 +47,7 @@ export default function ProjectDetailsCard({ projectData }) {
 
       {projectData.leader._id !== user._id ? (
         <h4>
-          Leader: {projectData.leader.fullName} {projectData.leader.profession}
+          Leader:  <Link to={`/user/${projectData.leader._id}`}>{projectData.leader.fullName}</Link> [{projectData.leader.profession}]
         </h4>
       ) : (
         <h4 style={{ color: "green", fontWeight: "bold" }}>
@@ -80,18 +80,17 @@ export default function ProjectDetailsCard({ projectData }) {
               <p>
                 {collaboratorGroup.rol} {collaboratorGroup.users.length}/
                 {collaboratorGroup.quantity}
-                <span> [</span>
-                {collaboratorGroup.users.map((member, index) => {
+                {collaboratorGroup.users.map((member, index, array) => {
                   return (
                     <Link key={index} to={`/user/${member._id}`}>
-                      {member.fullName}
+                      {index === 0 ? " [" + member.fullName : member.fullName}
+                      {index === array.length - 1 && "]"}
                       {index < collaboratorGroup.users.length - 1 && (
                         <span>, </span>
                       )}
                     </Link>
                   );
                 })}
-                <span>] </span>
                 {collaboratorGroup.rol === user.profession &&
                   collaboratorGroup.quantity -
                     collaboratorGroup.users.length !==
