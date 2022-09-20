@@ -17,7 +17,7 @@ export default function ProjectDetailsCard({ projectData }) {
         headers: { Authorization: `Bearer ${storedToken}` },
       });
       toast.success("Project deleted successfully", { duration: 2800 });
-      window.location.reload();
+      navigate("/manage-projects");
     } catch (error) {
       setErrorMessage(error.response.data.error);
     }

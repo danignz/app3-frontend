@@ -16,6 +16,7 @@ export default function Navbar() {
         {isLoggedIn && <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="/manage-projects">Manage projects</NavLink></li>}
         {isLoggedIn && <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to={`/user/${user._id}`}>User details</NavLink></li>}
         {isLoggedIn && <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="/edit-profile">Edit profile</NavLink></li>}
+        {isLoggedIn && <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to={`/portfolio/${user._id}`}>My portfolio</NavLink></li>} 
         {isLoggedIn && <li><button onClick={() => navigate(-1)}>{String.fromCharCode(8592)} Go back</button></li>}
         {isLoggedIn && <li><button onClick={() => logOutUser()}>Log out</button></li>}
       </ul>

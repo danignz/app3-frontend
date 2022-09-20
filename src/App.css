@@ -426,3 +426,12 @@ th {
   display: flex;
   flex-direction: column;
 }
+
+/* Portfolio View */
+
+#portfolio-view {
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
