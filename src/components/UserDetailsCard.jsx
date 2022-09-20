@@ -41,6 +41,9 @@ export default function UserDetailsCard({ userData }) {
       {user._id === userData._id && (
         <button onClick={() => navigate(`/edit-profile`)}>Edit</button>
       )}
+      <button onClick={() => navigate(`/portfolio/${userData._id}`)}>
+        Check Portfolio
+      </button>
     </div>
   );
 }

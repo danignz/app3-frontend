@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
 import toast from "react-hot-toast";
@@ -76,19 +76,33 @@ export default function ProjectDetailsCard({ projectData }) {
       {projectData.collaborators &&
         projectData.collaborators.map((collaboratorGroup, index) => {
           return (
-            <p key={index}>
-              {collaboratorGroup.rol} {collaboratorGroup.users.length}/
-              {collaboratorGroup.quantity}
-              {collaboratorGroup.rol === user.profession &&
-                collaboratorGroup.quantity - collaboratorGroup.users.length !==
-                  0 &&
-                projectData.leader._id !== user._id && (
-                  <span style={{ color: "green", fontWeight: "bold" }}>
-                    {" "}
-                    You can enrole!
-                  </span>
-                )}
-            </p>
+            <div key={index}>
+              <p>
+                {collaboratorGroup.rol} {collaboratorGroup.users.length}/
+                {collaboratorGroup.quantity}
+                <span> [</span>
+                {collaboratorGroup.users.map((member, index) => {
+                  return (
+                    <Link key={index} to={`/user/${member._id}`}>
+                      {member.fullName}
+                      {index < collaboratorGroup.users.length - 1 && (
+                        <span>, </span>
+                      )}
+                    </Link>
+                  );
+                })}
+                <span>] </span>
+                {collaboratorGroup.rol === user.profession &&
+                  collaboratorGroup.quantity -
+                    collaboratorGroup.users.length !==
+                    0 &&
+                  projectData.leader._id !== user._id && (
+                    <span style={{ color: "green", fontWeight: "bold" }}>
+                      {String.fromCharCode(8592)}You can enrole!
+                    </span>
+                  )}
+              </p>
+            </div>
           );
         })}
 
