@@ -65,7 +65,7 @@ export default function ManageRequests() {
 
   const handleRequestDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/api/v1/requests/${id}`, {
+      await axios.delete(`${process.env.REACT_APP_API_URL}/requests/${id}`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       });
       toast.success("Request deleted successfully", {duration: 2800});

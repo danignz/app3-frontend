@@ -13,7 +13,7 @@ export default function ProjectDetailsCard({ projectData }) {
 
   const handleDeleteProject = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/api/v1/projects/${id}`, {
+      await axios.delete(`${process.env.REACT_APP_API_URL}/projects/${id}`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       });
       toast.success("Project deleted successfully", { duration: 2800 });
