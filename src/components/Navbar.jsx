@@ -39,7 +39,7 @@ export default function Navbar() {
               to="/manage-requests"
             >
               <div className="iconcontainer">
-                <img src={requestsicon} alt="Home icon" />
+                <img src={requestsicon} alt="Request icon" />
                 <p>REQUESTS</p>
               </div>
             </NavLink>
@@ -69,7 +69,7 @@ export default function Navbar() {
               to={`/portfolio/${user._id}`}
             >
               <div className="iconcontainer">
-                <img src={portfolioicon} alt="Home icon" />
+                <img src={portfolioicon} alt="Portfolio icon" />
                 <p>PORTFOLIO</p>
               </div>
             </NavLink>
@@ -82,7 +82,7 @@ export default function Navbar() {
               to={`/user/${user._id}`}
             >
               <div className="iconcontainer avatar">
-                <img src={user.profileImage} alt="Home icon" />
+                <img src={user.profileImage} alt="Current user icon" />
                 <p>ME</p>
               </div>
             </NavLink>
@@ -92,7 +92,7 @@ export default function Navbar() {
         {isLoggedIn && (
           <li>
             <button className="iconcontainer" onClick={() => logOutUser()}>
-              <img src={logoout} alt="Home icon" />
+              <img src={logoout} alt="Exit icon" />
             </button>
           </li>
         )}

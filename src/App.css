@@ -20,6 +20,7 @@
   --green: green;
   --hoover-blue: rgb(50, 99, 235);
   --hoover-green: #3db341;
+  --hoover-black: rgb(66, 64, 64);
 }
 
 .backgroundcolor {
@@ -138,7 +139,7 @@ button.iconcontainer:hover {
 
 #home-view div {
   width: 70vw;
-  height: 400px;
+  height: 420px;
   display: flex;
 }
 
@@ -211,6 +212,41 @@ button.iconcontainer:hover {
 #home-view footer {
   position: fixed;
   bottom: 0;
+}
+
+/* Error Page View */
+
+#error-page-view {
+  width: 100vw;
+  height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#error-page-view.not-login {
+  height: 100vh;
+}
+
+#error-page-view div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#error-page-view div p {
+  font-size: 1.3em;
+}
+
+#error-page-view button {
+  width: 150px;
+  background-color: var(--black);
+  margin-top: 20px;
+}
+
+#error-page-view button:hover {
+  width: 150px;
+  background-color: var(--hoover-black);
 }
 
 /* Sinup View */

@@ -69,11 +69,15 @@ export default function Home() {
               onChange={handleChange}
               placeholder="MySecurePassword1234"
             />
-            {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-            <button className="btn-common" type="submit">Log in </button>
+            <button className="btn-common" type="submit">
+              Log in
+            </button>
           </form>
           <hr />
-          <button className="btn-common" onClick={() => navigate(`/signup`)}>Sign up</button>
+          <button className="btn-common" onClick={() => navigate(`/signup`)}>
+            Sign up
+          </button>
+          {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         </div>
       </div>
       <footer>
