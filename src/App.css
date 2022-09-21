@@ -1,16 +1,25 @@
 /* General Styles */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Press+Start+2P&display=swap");
+/* font-family: 'Roboto', sans-serif; */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 :root {
   --dark-blue: #166fe5;
   --dark-grey: rgb(97, 97, 97);
+  --strong-grey: rgb(71, 71, 71);
   --light-grey: #f0f2f5;
   --black: black;
   --white: white;
+  --blue: blue;
+  --green: green;
+  --hoover-blue: rgb(50, 99, 235);
+  --hoover-green: #3db341;
 }
 
 .backgroundcolor {
@@ -20,6 +29,16 @@
 a {
   text-decoration: none;
   color: var(--dark-blue);
+}
+
+.btn-common {
+  height: 45px;
+  margin-top: 10px;
+  font-size: 1em;
+  color: var(--white);
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
 }
 
 /* NavBar Component */
@@ -119,7 +138,7 @@ button.iconcontainer:hover {
 
 #home-view div {
   width: 70vw;
-  height: 50vh;
+  height: 400px;
   display: flex;
 }
 
@@ -131,25 +150,26 @@ button.iconcontainer:hover {
 }
 
 #home-view div div:first-child img {
-  height: 150px;
-  width: 520px;
+  height: 120px;
+  width: 460px;
 }
 
 #home-view div div:first-child h2 {
-  padding: 1%;
-  color: rgb(71, 71, 71);
+  padding-top: 1%;
+  color: var(--strong-grey);
+  padding-right: 50px;
 }
 
 #home-view div div:nth-child(2) {
   padding: 2%;
-  width: 40%;
+  width: 35%;
   height: 100%;
-  background-color: white;
+  background-color: var(--white);
   border-radius: 10px;
-  display: inline;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0 0 5px 2px var(--strong-grey);
 }
 
 #home-view div div:nth-child(2) form {
@@ -161,30 +181,36 @@ button.iconcontainer:hover {
 
 #home-view div div:nth-child(2) form input {
   padding: 10px;
+  margin-bottom: 5px;
 }
 
 #home-view div div:nth-child(2) form button {
   width: 100%;
-  height: 40px;
-  margin-top: 10px;
-  font-size: 1em;
-  color: white;
-  font-weight: bold;
-  background-color: blue;
-  border-radius: 10px;
-  border: none;
+  background-color: var(--blue);
+}
+
+#home-view div div:nth-child(2) form button:hover {
+  background-color: var(--hoover-blue);
 }
 
 #home-view div div:nth-child(2) > button {
   width: 50%;
-  height: 40px;
-  margin-top: 10px;
-  font-size: 1em;
-  color: white;
-  font-weight: bold;
-  background-color: green;
-  border-radius: 10px;
-  border: none;
+  background-color: var(--green);
+}
+
+#home-view div div:nth-child(2) > button:hover {
+  background-color: var(--hoover-green);
+}
+
+#home-view hr {
+  border: 1px solid var(--light-grey);
+  width: 100%;
+  margin: 20px;
+}
+
+#home-view footer {
+  position: fixed;
+  bottom: 0;
 }
 
 /* Sinup View */

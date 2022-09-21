@@ -86,7 +86,7 @@ export default function Signup() {
         about: user.about,
         contactInfo: user.contactInfo,
       });
-      toast.success("Account created successfully", {duration: 2800});
+      toast.success("Account created successfully", { duration: 2800 });
       navigate("/");
     } catch (error) {
       setErrorMessage(error.response.data.error);

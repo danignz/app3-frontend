@@ -30,7 +30,7 @@ export default function Home() {
         `${process.env.REACT_APP_API_URL}/auth/login`,
         user
       );
-      toast.success("Welcome back!", {duration: 2800});
+      toast.success("Welcome back!", { duration: 2800 });
       storeToken(response.data.authToken);
       authenticateUser();
       navigate("/main");
@@ -45,8 +45,8 @@ export default function Home() {
         <div>
           <img src={logogrey} alt="Iron Co-Workers logo" />
           <h2>
-            Iron Co-Workers helps you improve your portfolio and connect with
-            amazing professionals
+            Iron Co-Workers helps you improve your portfolio through
+            collaboration with amazing professionals.
           </h2>
         </div>
         <div>
@@ -58,6 +58,7 @@ export default function Home() {
               name="email"
               value={user.email}
               onChange={handleChange}
+              placeholder="mail@example.com"
             />
             <label>Password</label>
             <input
@@ -66,14 +67,18 @@ export default function Home() {
               name="password"
               value={user.password}
               onChange={handleChange}
+              placeholder="MySecurePassword1234"
             />
             {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-            <button type="submit">Log in </button>
+            <button className="btn-common" type="submit">Log in </button>
           </form>
           <hr />
-          <button onClick={() => navigate(`/signup`)}>Sign up</button>
+          <button className="btn-common" onClick={() => navigate(`/signup`)}>Sign up</button>
         </div>
       </div>
+      <footer>
+        <p>{String.fromCharCode(9400)} Daniel González | TA: Marina Altés</p>
+      </footer>
     </div>
   );
 }
