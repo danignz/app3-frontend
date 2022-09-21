@@ -256,12 +256,18 @@ th {
   width: 50%;
 }
 
+#main-view > div:first-child {
+  width: 320px;
+  height: 500px;
+  margin-top: 40px;
+}
+
 #main-view aside {
+  margin-top: 20px;
   padding: 0 20px 0 20px;
-  width: 20%;
-  height: 600px;
+  width: 250px;
+  height: 500px;
   border: 1px solid grey;
-  margin-top: 90px;
   display: flex;
   flex-direction: column;
 }

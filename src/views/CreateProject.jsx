@@ -15,7 +15,6 @@ export default function CreateProject() {
     description: "",
     projectUrl: "",
     onCampus: "No",
-    likes: 0,
     status: "Open",
   });
 
@@ -154,7 +153,6 @@ export default function CreateProject() {
           description: project.description,
           projectUrl: project.projectUrl,
           onCampus: project.onCampus,
-          likes: project.likes,
           status: project.status,
         },
         { headers: { Authorization: `Bearer ${storedToken}` } }

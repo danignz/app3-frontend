@@ -129,27 +129,28 @@ export default function Main() {
     <div>
       <Navbar />
       <div id="main-view">
-        <aside>
-          <h1>Welcome, {user.fullName} </h1>
-          <h4>Filter projects:</h4>
-          <input
-            type="text"
-            placeholder="🔎 by project name"
-            onChange={(e) => handleSearch(e)}
-          />
+        <div>
+          <h3>Welcome, {user.fullName}</h3>
+          <aside>
+            <h4>Filter projects:</h4>
+            <input
+              type="text"
+              placeholder="🔎 by project name"
+              onChange={(e) => handleSearch(e)}
+            />
 
-          <label>Work modality:</label>
-          <select name="onCampus" onChange={handleChangeWorkModality}>
-            <option value="ALL">ALL</option>
-            <option value="No">REMOTE</option>
-            <option value="Yes">ON CAMPUS</option>
-          </select>
-          <h4>Sort projects:</h4>
-          <button onClick={handleSortByName}>By name</button>
-          <button onClick={handleSortByStartDate}>Start date</button>
-          <button onClick={handleSortByEndDate}>End date</button>
-        </aside>
-
+            <label>Work modality:</label>
+            <select name="onCampus" onChange={handleChangeWorkModality}>
+              <option value="ALL">ALL</option>
+              <option value="No">REMOTE</option>
+              <option value="Yes">ON CAMPUS</option>
+            </select>
+            <h4>Sort projects:</h4>
+            <button onClick={handleSortByName}>By name</button>
+            <button onClick={handleSortByStartDate}>Start date</button>
+            <button onClick={handleSortByEndDate}>End date</button>
+          </aside>
+        </div>
         <div id="main-container">
           <div>
             <button onClick={getOpenProjects}>Projects Recruiting</button>
