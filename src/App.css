@@ -241,15 +241,38 @@ th {
 /* Main View */
 
 #main-view {
-  padding: 1%;
+  padding-right: 1%;
+  padding-left: 1%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
 }
 
-#main-view div:first-child {
+#main-view #main-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+}
+
+#main-view aside {
+  padding: 0 20px 0 20px;
+  width: 20%;
+  height: 600px;
+  border: 1px solid grey;
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+}
+
+#main-view aside button {
+  width: 100px;
+}
+
+#main-view #project-card {
+  /* background-color: #7ee682; */
+  width: 97%;
 }
 
 #main-view div > button:first-child,

@@ -32,6 +32,7 @@ export default function ProjectCard({ projectData }) {
         <p key={index}>{sentence}</p>
       ))}
       <p>Start: {new Date(projectData["startDate"]).toDateString()}</p>
+      <p>End: {new Date(projectData["endDate"]).toDateString()}</p>
 
       <button onClick={() => navigate(`/project/${projectData._id}`)}>
         Detail
