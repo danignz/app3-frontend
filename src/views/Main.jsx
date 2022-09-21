@@ -126,7 +126,7 @@ export default function Main() {
   };
 
   return (
-    <div>
+    <div className="backgroundcolor">
       <Navbar />
       <div id="main-view">
         <div>

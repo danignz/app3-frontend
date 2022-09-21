@@ -165,7 +165,7 @@ export default function CreateProject() {
   };
 
   return (
-    <div>
+    <div className="backgroundcolor">
       <Navbar />
       <div id="create-project">
         <h2>Create a project</h2>

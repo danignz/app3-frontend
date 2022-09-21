@@ -31,7 +31,7 @@ export default function ManageProjects() {
   }, []);
 
   return (
-    <div>
+    <div className="backgroundcolor">
       <Navbar />
       <div id="manage-projects-view">
         <h2>Become a Team Lead!</h2>

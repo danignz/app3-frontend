@@ -40,7 +40,7 @@ export default function Home() {
   };
 
   return (
-    <div id="home-view">
+    <div id="home-view" className="backgroundcolor">
       <div>
         <div>
           <img src={logogrey} alt="Iron Co-Workers logo" />

@@ -78,7 +78,7 @@ export default function Portfolio() {
   }, [id, enumValues, user]);
 
   return (
-    <div>
+    <div className="backgroundcolor">
       <Navbar />
       <div id="portfolio-view">
         <h2>Projects as a collaborator</h2>

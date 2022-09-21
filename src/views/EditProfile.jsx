@@ -105,7 +105,7 @@ export default function EditProfile() {
   };
 
   return (
-    <div>
+    <div className="backgroundcolor">
       <Navbar />
       <div id="edit-profile">
         <h2>Editing {userData.fullName}'s profile</h2>

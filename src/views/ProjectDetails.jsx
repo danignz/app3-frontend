@@ -27,7 +27,7 @@ export default function ProjectDetails() {
   }, [id]);
 
   return (
-    <div>
+    <div className="backgroundcolor">
       <Navbar />
       <div id="project-details">
         <h2>Project details</h2>

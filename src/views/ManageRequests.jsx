@@ -76,7 +76,7 @@ export default function ManageRequests() {
   };
 
   return (
-    <div>
+    <div className="backgroundcolor">
       <Navbar />
       <div id="manage-colaborators-requests">
         <h2>Collaborators who want to join to your project</h2>

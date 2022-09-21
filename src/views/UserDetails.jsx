@@ -27,7 +27,7 @@ export default function UserDetails() {
   }, [id]);
 
   return (
-    <div>
+    <div className="backgroundcolor">
       <Navbar />
       <div id="user-details">
         <h2>User details</h2>

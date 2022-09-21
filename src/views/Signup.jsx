@@ -94,7 +94,7 @@ export default function Signup() {
   };
 
   return (
-    <div id="signup">
+    <div id="signup" className="backgroundcolor">
       <h2>Create an account</h2>
       <form onSubmit={handleSubmit}>
         <label>Full name</label>

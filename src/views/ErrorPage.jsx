@@ -8,7 +8,7 @@ export default function ErrorPage() {
   const { isLoggedIn } = useContext(AuthContext);
   const navigate = useNavigate();
   return (
-    <div>
+    <div className="backgroundcolor">
       <Navbar />
       <p>404 - Page not found</p>
       {!isLoggedIn && (

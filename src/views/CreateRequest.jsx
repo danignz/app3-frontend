@@ -28,7 +28,7 @@ export default function CreateRequest() {
   }, [id]);
 
   return (
-    <div>
+    <div className="backgroundcolor">
       <Navbar />
       <div id="create-request">
         {request && (

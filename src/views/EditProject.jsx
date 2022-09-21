@@ -167,7 +167,7 @@ export default function EditProject() {
   };
 
   return (
-    <div>
+    <div className="backgroundcolor">
       <Navbar />
       <div id="create-project">
         <h2>Edit project</h2>
