@@ -8,6 +8,7 @@ export default function UserDetails() {
   const { id } = useParams();
   const [user, setUser] = useState(null);
   const storedToken = localStorage.getItem("authToken");
+  document.title = `Iron Co-Workers | User Details`
 
   useEffect(() => {
     const getData = async () => {

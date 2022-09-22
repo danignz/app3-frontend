@@ -13,6 +13,7 @@ export default function ManageRequests() {
   const myForm = useRef();
   const [errorMessage, setErrorMessage] = useState(undefined);
   const [errorMessage2, setErrorMessage2] = useState(undefined);
+  document.title = `Iron Co-Workers | Requests`
 
   useEffect(() => {
     const getData = async () => {

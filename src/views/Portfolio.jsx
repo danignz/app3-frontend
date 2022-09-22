@@ -11,6 +11,7 @@ export default function Portfolio() {
   const [user, setUser] = useState({ profession: "" });
   const [enumValues, setEnumValues] = useState({ profession: [] });
   const { id } = useParams();
+  document.title = `Iron Co-Workers | Portfolio`
 
   useEffect(() => {
     const getData = async () => {

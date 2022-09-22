@@ -8,6 +8,8 @@ import icon404 from "../images/icon404.png";
 export default function ErrorPage() {
   const { isLoggedIn } = useContext(AuthContext);
   const navigate = useNavigate();
+  document.title = `Iron Co-Workers | Error Page`
+
   return (
     <div className="backgroundcolor">
       {isLoggedIn && <Navbar />}

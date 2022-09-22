@@ -12,7 +12,10 @@ export default function EditProject() {
   const [enumValues, setEnumValues] = useState(null);
   const [errorMessage, setErrorMessage] = useState(undefined);
   const date = new Date();
-
+  const [webDevelopers, setWebDevelopers] = useState({ quantity: 0 });
+  const [uxuiDesigners, setUxUiDesigners] = useState({ quantity: 0 });
+  const [dataAnalysts, setDataAnalysts] = useState({ quantity: 0 });
+  const [cyberAnalysts, setCyberAnalysts] = useState({ quantity: 0 });
   const [project, setProject] = useState({
     name: "",
     projectImage: "",
@@ -22,11 +25,7 @@ export default function EditProject() {
     projectUrl: "",
     onCampus: "",
   });
-
-  const [webDevelopers, setWebDevelopers] = useState({ quantity: 0 });
-  const [uxuiDesigners, setUxUiDesigners] = useState({ quantity: 0 });
-  const [dataAnalysts, setDataAnalysts] = useState({ quantity: 0 });
-  const [cyberAnalysts, setCyberAnalysts] = useState({ quantity: 0 });
+  document.title = `Iron Co-Workers | Edit Project`
 
   useEffect(() => {
     const getData = async () => {

@@ -19,6 +19,7 @@ export default function Signup() {
   const [passwordControl, setPasswordControl] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
   const navigate = useNavigate();
+  document.title = `Iron Co-Workers | Sign Up`
 
   const handleChange = (e) => {
     setUser((prev) => {
@@ -94,7 +95,8 @@ export default function Signup() {
   };
 
   return (
-    <div id="signup" className="backgroundcolor">
+    <div id="sign-up-view" className="backgroundcolor">
+    <div>
       <h2>Create an account</h2>
       <form onSubmit={handleSubmit}>
         <label>Full name</label>
@@ -169,7 +171,7 @@ export default function Signup() {
         <label>About</label>
         <textarea
           required
-          rows="8"
+          rows="4"
           cols="50"
           name="about"
           value={user.about}
@@ -182,14 +184,19 @@ export default function Signup() {
           name="contactInfo"
           value={user.contactInfo}
           onChange={handleChange}
-          placeholder="https://linkedin.com/in/example,https://twitter.com/example"
+          placeholder="https://linkedin.es/example,https://twitter.com/example"
         />
-        <button type="submit">Register</button>
-      </form>
-      {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-      <button onClick={() => navigate(`/`)}>
+        <div>
+        <button className="btn-common" type="submit">Register</button>
+        <button className="btn-common" onClick={() => navigate(`/`)}>
         {String.fromCharCode(8592)} Back
       </button>
+        </div>
+
+      </form>
+      {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+
+      </div>
     </div>
   );
 }

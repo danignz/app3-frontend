@@ -13,6 +13,7 @@ export default function Home() {
   });
   const [errorMessage, setErrorMessage] = useState(undefined);
   const navigate = useNavigate();
+  document.title = `Iron Co-Workers | Welcome`
 
   const handleChange = (e) => {
     setUser((prev) => {

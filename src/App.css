@@ -18,7 +18,7 @@
   --white: white;
   --blue: blue;
   --green: green;
-  --hoover-blue: rgb(50, 99, 235);
+  --hoover-blue: rgb(119, 151, 240);
   --hoover-green: #3db341;
   --hoover-black: rgb(66, 64, 64);
 }
@@ -187,7 +187,7 @@ button.iconcontainer:hover {
 
 #home-view div div:nth-child(2) form button {
   width: 100%;
-  background-color: var(--blue);
+  background-color: var(--dark-blue);
 }
 
 #home-view div div:nth-child(2) form button:hover {
@@ -251,39 +251,88 @@ button.iconcontainer:hover {
 
 /* Sinup View */
 
-#signup form,
+#sign-up-view {
+  width: 100vw;
+  height: 100vh;
+  padding: 3%;
+  display: flex;
+  justify-content: center;
+}
+
+#sign-up-view > div {
+  width: 450px;
+  height: 88vh;
+  background-color: var(--white);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 5px 2px var(--strong-grey);
+}
+
+#sign-up-view h2 {
+  margin-bottom: 5px;
+}
+
+#sign-up-view form {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9em;
+}
+
+#sign-up-view > div > form > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+#sign-up-view > div > form input:not([type="file"]),
+textarea,
+select {
+  padding: 5px;
+  margin-bottom: 7px;
+  background-color: var(--light-grey);
+}
+
+#sign-up-view > div > form input[type="file"] {
+  padding: 5px;
+  margin-bottom: 7px;
+}
+
+#sign-up-view > div > form > div > button:nth-child(2) {
+  background-color: black;
+  width: 23%;
+}
+
+#sign-up-view > div > form > div > button:nth-child(2):hover {
+  background-color: var(--hoover-black);
+}
+
+#sign-up-view button {
+  width: 65%;
+  background-color: var(--green);
+}
+
+#sign-up-view button:hover {
+  background-color: var(--hoover-green);
+}
+
+/* EditProfile View */
+
 #edit-profile form {
   display: flex;
   flex-direction: column;
 }
 
-/* EditProfile View */
-
-#edit-profile button,
-#signup button {
-  width: 250px;
-  height: 40px;
-  margin-top: 10px;
-  font-size: 1em;
-  color: white;
-  font-weight: bold;
+#edit-profile button {
+  width: 50%;
   background-color: rgb(24, 129, 24);
-  border-radius: 10px;
-  border: none;
-  margin: 20px;
-}
-
-#signup > button {
-  background-color: black;
-  width: 150px;
 }
 
 /* Manager Requests View */
 
 #manage-colaborators-requests,
 #manage-my-requests,
-#edit-profile,
-#signup {
+#edit-profile {
   padding: 3%;
 }
 

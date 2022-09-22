@@ -11,7 +11,6 @@ export default function EditProfile() {
   const { user, logOutUser } = useContext(AuthContext);
   const [enumValues, setEnumValues] = useState(null);
   const [errorMessage, setErrorMessage] = useState(undefined);
-
   const [userData, setUserData] = useState({
     email: user.email,
     fullName: user.fullName,
@@ -22,6 +21,7 @@ export default function EditProfile() {
     about: "",
     contactInfo: "",
   });
+  document.title = `Iron Co-Workers | Edit Profile`
 
   useEffect(() => {
     const getData = async () => {
@@ -170,7 +170,7 @@ export default function EditProfile() {
           <label>About</label>
           <textarea
             required
-            rows="8"
+            rows="4"
             cols="50"
             name="about"
             value={userData.about}

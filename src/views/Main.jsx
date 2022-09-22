@@ -12,6 +12,7 @@ export default function Main() {
   const [recruitingSelected, setRecruitingSelected] = useState(true);
   const storedToken = localStorage.getItem("authToken");
   const { user } = useContext(AuthContext);
+  document.title = `Iron Co-Workers | Home`
 
   const getOpenProjects = () => {
     const filteredOpen = projects.filter((elem) => elem.status === "Open");
