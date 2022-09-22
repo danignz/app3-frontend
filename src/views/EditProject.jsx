@@ -168,116 +168,125 @@ export default function EditProject() {
   return (
     <div className="backgroundcolor">
       <Navbar />
-      <div id="create-project">
-        <h2>Edit project</h2>
-        <form onSubmit={handleSubmit}>
-          <label>Name</label>
-          <input
-            required
-            type="text"
-            name="name"
-            value={project.name}
-            onChange={handleChange}
-            placeholder="e.g.: Food delivery App"
-          />
-          <label>Start date</label>
-          <input
-            required
-            type="date"
-            name="startDate"
-            value={!project.startDate ? "" : project.startDate.slice(0, 10)}
-            onChange={handleChange}
-            min={date.toJSON().slice(0, 10)}
-            max="2025-12-31"
-          />
-          <label>End date</label>
-          <input
-            required
-            type="date"
-            name="endDate"
-            value={!project.endDate ? "" : project.endDate.slice(0, 10)}
-            onChange={handleChange}
-            min={date.toJSON().slice(0, 10)}
-            max="2025-12-31"
-          />
-          <label>Project picture</label>
-          <input type="file" onChange={(e) => handleFileUpload(e)} />
-          <label>Project website</label>
-          <input
-            type="text"
-            name="projectUrl"
-            value={project.projectUrl}
-            onChange={handleChange}
-            placeholder="e.g.: http://deliveryfoodapp.net"
-          />
-          <label>Require on campus?</label>
-          <select
-            value={project.onCampus}
-            name="onCampus"
-            onChange={handleChange}
-          >
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-          </select>
+      <div id="edit-project-view">
+        <div>
+          <h2>Edit project</h2>
+          <form onSubmit={handleSubmit}>
+            <label>Name</label>
+            <input
+              required
+              type="text"
+              name="name"
+              value={project.name}
+              onChange={handleChange}
+              placeholder="e.g.: Food delivery App"
+            />
+            <div>
+              <div>
+                <label>Start date</label>
+                <input
+                  required
+                  type="date"
+                  name="startDate"
+                  value={
+                    !project.startDate ? "" : project.startDate.slice(0, 10)
+                  }
+                  onChange={handleChange}
+                  min={date.toJSON().slice(0, 10)}
+                  max="2025-12-31"
+                />
+              </div>
+              <div>
+                <label>End date</label>
+                <input
+                  required
+                  type="date"
+                  name="endDate"
+                  value={!project.endDate ? "" : project.endDate.slice(0, 10)}
+                  onChange={handleChange}
+                  min={date.toJSON().slice(0, 10)}
+                  max="2025-12-31"
+                />
+              </div>
+            </div>
+            <label>Project picture</label>
+            <input type="file" onChange={(e) => handleFileUpload(e)} />
+            <label>Project website</label>
+            <input
+              type="text"
+              name="projectUrl"
+              value={project.projectUrl}
+              onChange={handleChange}
+              placeholder="e.g.: http://deliveryfoodapp.net"
+            />
+            <label>Require on campus?</label>
+            <select
+              value={project.onCampus}
+              name="onCampus"
+              onChange={handleChange}
+            >
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
 
-          <label>Description</label>
-          <textarea
-            required
-            rows="4"
-            cols="50"
-            name="description"
-            value={project.description}
-            onChange={handleChange}
-            placeholder="e.g.: This project was born with the idea of developing a social network application for users who..."
-          ></textarea>
+            <label>Description</label>
+            <textarea
+              required
+              rows="4"
+              cols="50"
+              name="description"
+              value={project.description}
+              onChange={handleChange}
+              placeholder="e.g.: This project was born with the idea of developing a social network application for users who..."
+            ></textarea>
 
-          <label>How many collaborators by rol?</label>
-          <p>{enumValues && enumValues.profession[0]}</p>
-          <input
-            type="number"
-            name="quantity"
-            value={webDevelopers.quantity}
-            min="0"
-            max="3"
-            onChange={handleChangeWebDevelopers}
-          ></input>
+            <label>- How many collaborators by rol?</label>
+            <p>{enumValues && enumValues.profession[0]}</p>
+            <input
+              type="number"
+              name="quantity"
+              value={webDevelopers.quantity}
+              min="0"
+              max="3"
+              onChange={handleChangeWebDevelopers}
+            ></input>
 
-          <p>{enumValues && enumValues.profession[1]}</p>
-          <input
-            type="number"
-            name="quantity"
-            value={uxuiDesigners.quantity}
-            min="0"
-            max="3"
-            onChange={handleUxUiDesigners}
-          ></input>
+            <p>{enumValues && enumValues.profession[1]}</p>
+            <input
+              type="number"
+              name="quantity"
+              value={uxuiDesigners.quantity}
+              min="0"
+              max="3"
+              onChange={handleUxUiDesigners}
+            ></input>
 
-          <p>{enumValues && enumValues.profession[2]}</p>
-          <input
-            type="number"
-            name="quantity"
-            value={dataAnalysts.quantity}
-            min="0"
-            max="3"
-            onChange={handleDataAnalysts}
-          ></input>
+            <p>{enumValues && enumValues.profession[2]}</p>
+            <input
+              type="number"
+              name="quantity"
+              value={dataAnalysts.quantity}
+              min="0"
+              max="3"
+              onChange={handleDataAnalysts}
+            ></input>
 
-          <p>{enumValues && enumValues.profession[3]}</p>
-          <input
-            type="number"
-            name="quantity"
-            value={cyberAnalysts.quantity}
-            min="0"
-            max="3"
-            onChange={handleCyberAnalysts}
-          ></input>
+            <p>{enumValues && enumValues.profession[3]}</p>
+            <input
+              type="number"
+              name="quantity"
+              value={cyberAnalysts.quantity}
+              min="0"
+              max="3"
+              onChange={handleCyberAnalysts}
+            ></input>
 
-          <button type="submit">Save changes</button>
-        </form>
-        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-        <button onClick={() => navigate(`/project/${id}`)}>
-          {String.fromCharCode(8592)} Back
-        </button>
+            <button className="btn-common" type="submit">
+              Save changes
+            </button>
+          </form>
+          {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+        </div>
       </div>
     </div>
   );

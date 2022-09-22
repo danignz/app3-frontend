@@ -380,9 +380,10 @@ select {
   background-color: var(--hoover-green);
 }
 
-/* Create Project View */
+/* Create Project View && Edit Project View */
 
-#create-project-view {
+#create-project-view,
+#edit-project-view {
   width: 100vw;
   height: calc(100vh - 60px);
   padding: 1%;
@@ -390,7 +391,8 @@ select {
   justify-content: center;
 }
 
-#create-project-view > div {
+#create-project-view > div,
+#edit-project-view > div {
   width: 600px;
   height: 90vh;
   background-color: var(--white);
@@ -401,11 +403,13 @@ select {
   box-shadow: 0 0 5px 2px var(--strong-grey);
 }
 
-#create-project-view h2 {
+#create-project-view h2,
+#edit-project-view h2 {
   margin-bottom: 5px;
 }
 
-#create-project-view form {
+#create-project-view form,
+#edit-project-view form {
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -414,6 +418,9 @@ select {
 
 #create-project-view > div > form input:not([type="file"]),
 textarea,
+select,
+#edit-project-view > div > form input:not([type="file"]),
+textarea,
 select {
   padding: 5px;
   margin-bottom: 7px;
@@ -421,43 +428,53 @@ select {
   font-size: 1em;
 }
 
-#create-project-view > div > form > div {
+#create-project-view > div > form > div,
+#edit-project-view > div > form > div {
   display: flex;
 }
 
-#create-project-view > div > form > div > div:first-child {
+#create-project-view > div > form > div > div:first-child,
+#edit-project-view > div > form > div > div:first-child {
   display: flex;
   justify-content: flex-start;
   width: 50%;
   gap: 10px;
 }
 
-#create-project-view > div > form > div > div:last-child {
+#create-project-view > div > form > div > div:last-child,
+#edit-project-view > div > form > div > div:last-child {
   display: flex;
   justify-content: flex-end;
   width: 50%;
   gap: 10px;
 }
 
-#create-project-view input[type="date"] {
+#create-project-view input[type="date"],
+#edit-project-view input[type="date"] {
   width: 55%;
 }
 
-#create-project-view input[type="number"], select {
+#create-project-view input[type="number"],
+select,
+#edit-project-view input[type="number"],
+select {
   width: 15%;
 }
 
-#create-project-view > div > form input[type="file"] {
+#create-project-view > div > form input[type="file"],
+#edit-project-view > div > form input[type="file"] {
   padding: 5px;
   margin-bottom: 7px;
 }
 
-#create-project-view button {
+#create-project-view button,
+#edit-project-view button {
   width: 35%;
   background-color: var(--green);
 }
 
-#create-project-view button:hover {
+#create-project-view button:hover,
+#edit-project-view button:hover {
   background-color: var(--hoover-green);
 }
 
