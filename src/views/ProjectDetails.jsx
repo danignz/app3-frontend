@@ -30,8 +30,7 @@ export default function ProjectDetails() {
   return (
     <div className="backgroundcolor">
       <Navbar />
-      <div id="project-details">
-        <h2>Project details</h2>
+      <div id="project-details-view">
         {project && <ProjectDetailsCard projectData={project} />}
         {!project && <p>Project not found</p>}
       </div>

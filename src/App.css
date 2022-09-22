@@ -18,9 +18,13 @@
   --white: white;
   --blue: blue;
   --green: green;
+  --red: red;
+  --orange: #df7c03;
   --hoover-blue: rgb(119, 151, 240);
   --hoover-green: #3db341;
   --hoover-black: rgb(66, 64, 64);
+  --hover-orange: rgb(248, 185, 68);
+  --hoover-red: rgb(248, 108, 108);
 }
 
 .backgroundcolor {
@@ -564,6 +568,110 @@ button.iconcontainer:hover {
   background-color: var(--hoover-blue);
 }
 
+/* Project Details View */
+
+#project-details-view {
+  width: 100vw;
+  height: calc(100vh - 60px);
+  padding: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Project Card Component */
+
+#project-details-card {
+  border: 1px solid rgb(0, 0, 0);
+  width: 65%;
+  height: 95%;
+  box-shadow: 0 0 5px 2px var(--strong-grey);
+  transition: 0.3s;
+  border-radius: 20px;
+  background-color: var(--white);
+}
+
+#project-details-card > div:first-child {
+  border-radius: 20px 20px 0 0;
+  height: 260px;
+  width: 100%;
+  display: flex;
+}
+
+#project-details-card #project-image-container {
+  height: 260px;
+  width: 50%;
+}
+
+#project-details-card #project-image-container img {
+  height: 260px;
+  width: 100%;
+  border-radius: 0 20px 0 0;
+}
+
+#project-details-card #project-info {
+  height: 260px;
+  width: 50%;
+  padding: 20px;
+  background-image: url("../src/images/projectbackground.png");
+  border-radius: 20px 0 0 0;
+  background-size: cover;
+}
+
+#project-details-card > div:nth-child(2) {
+  width: 100%;
+  padding: 20px;
+}
+
+#project-details-card > div:nth-child(2) img {
+  height: 50px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+#project-details-card #join-btn {
+  width: 15%;
+  background-color: var(--dark-blue);
+  margin-top: 20px;
+}
+
+#project-details-card #join-btn:hover {
+  background-color: var(--hoover-blue);
+}
+
+#project-details-card #closed-btn {
+  width: 15%;
+  background-color: #df7c03;
+  margin-right: 30px;
+  margin-top: 20px;
+}
+
+#project-details-card #closed-btn:hover {
+  background-color: rgb(241, 178, 60);
+}
+
+#project-details-card #edit-btn {
+  width: 15%;
+  background-color: var(--dark-blue);
+  margin-right: 30px;
+  margin-top: 20px;
+}
+
+#project-details-card #edit-btn:hover {
+  background-color: var(--hoover-blue);
+}
+
+#project-details-card #delete-btn {
+  width: 15%;
+  background-color: var(--red);
+  margin-right: 30px;
+  margin-top: 20px;
+}
+
+#project-details-card #delete-btn:hover {
+  background-color: var(--hoover-red);
+}
+
 /* Manager Requests View */
 
 #manage-colaborators-requests,
@@ -726,15 +834,6 @@ th {
   border: none;
 }
 
-/* Project Details View */
-
-#project-details {
-  padding: 1%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 /* Create Request View */
 
 #create-request {
@@ -756,35 +855,6 @@ th {
   color: white;
   font-weight: bold;
   background-color: rgb(5, 5, 5);
-  border-radius: 10px;
-  border: none;
-}
-
-/* ProjectCard Component */
-
-#project-details-card {
-  padding: 3%;
-  border: 1px solid rgb(0, 0, 0);
-  width: 60%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  margin: 10px;
-  border-radius: 20px;
-}
-
-#project-details-card p {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-#project-details-card button {
-  width: 200px;
-  height: 40px;
-  margin-top: 10px;
-  font-size: 1em;
-  color: white;
-  font-weight: bold;
-  background-color: blue;
   border-radius: 10px;
   border: none;
 }
