@@ -223,7 +223,7 @@ export default function EditProject() {
           <label>Description</label>
           <textarea
             required
-            rows="9"
+            rows="4"
             cols="50"
             name="description"
             value={project.description}

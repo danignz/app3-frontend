@@ -31,7 +31,7 @@ export default function Home() {
         `${process.env.REACT_APP_API_URL}/auth/login`,
         user
       );
-      toast.success("Welcome back!", { duration: 2800 });
+      toast.success("Welcome back!", { duration: 1800 });
       storeToken(response.data.authToken);
       authenticateUser();
       navigate("/main");

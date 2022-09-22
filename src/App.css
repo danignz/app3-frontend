@@ -380,6 +380,87 @@ select {
   background-color: var(--hoover-green);
 }
 
+/* Create Project View */
+
+#create-project-view {
+  width: 100vw;
+  height: calc(100vh - 60px);
+  padding: 1%;
+  display: flex;
+  justify-content: center;
+}
+
+#create-project-view > div {
+  width: 600px;
+  height: 90vh;
+  background-color: var(--white);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 5px 2px var(--strong-grey);
+}
+
+#create-project-view h2 {
+  margin-bottom: 5px;
+}
+
+#create-project-view form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9em;
+}
+
+#create-project-view > div > form input:not([type="file"]),
+textarea,
+select {
+  padding: 5px;
+  margin-bottom: 7px;
+  background-color: var(--light-grey);
+  font-size: 1em;
+}
+
+#create-project-view > div > form > div {
+  display: flex;
+}
+
+#create-project-view > div > form > div > div:first-child {
+  display: flex;
+  justify-content: flex-start;
+  width: 50%;
+  gap: 10px;
+}
+
+#create-project-view > div > form > div > div:last-child {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  gap: 10px;
+}
+
+#create-project-view input[type="date"] {
+  width: 55%;
+}
+
+#create-project-view input[type="number"], select {
+  width: 15%;
+}
+
+#create-project-view > div > form input[type="file"] {
+  padding: 5px;
+  margin-bottom: 7px;
+}
+
+#create-project-view button {
+  width: 35%;
+  background-color: var(--green);
+}
+
+#create-project-view button:hover {
+  background-color: var(--hoover-green);
+}
+
 /* Manager Requests View */
 
 #manage-colaborators-requests,
@@ -639,25 +720,6 @@ th {
 #manage-projects-view {
   padding: 3%;
   list-style-position: inside;
-}
-
-/* Create Project View */
-
-#create-project {
-  padding: 3%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#create-project h2 {
-  margin-bottom: 20px;
-}
-
-#create-project form {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
 }
 
 /* Portfolio View */
