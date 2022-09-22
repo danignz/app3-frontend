@@ -287,8 +287,8 @@ button.iconcontainer:hover {
 }
 
 #sign-up-view > div > form input:not([type="file"]),
-textarea,
-select {
+#sign-up-view > div > form textarea,
+#sign-up-view > div > form select {
   padding: 5px;
   margin-bottom: 7px;
   background-color: var(--light-grey);
@@ -358,8 +358,8 @@ select {
 }
 
 #edit-profile-view > div > form input:not([type="file"]),
-textarea,
-select {
+#edit-profile-view > div > form textarea,
+#edit-profile-view > div > form select {
   padding: 5px;
   margin-bottom: 7px;
   background-color: var(--light-grey);
@@ -417,11 +417,11 @@ select {
 }
 
 #create-project-view > div > form input:not([type="file"]),
-textarea,
-select,
+#create-project-view > div > form textarea,
+#create-project-view > div > form select,
 #edit-project-view > div > form input:not([type="file"]),
-textarea,
-select {
+#edit-project-view > div > form textarea,
+#edit-project-view > div > form select {
   padding: 5px;
   margin-bottom: 7px;
   background-color: var(--light-grey);
@@ -455,9 +455,9 @@ select {
 }
 
 #create-project-view input[type="number"],
-select,
+#create-project-view select,
 #edit-project-view input[type="number"],
-select {
+#edit-project-view select {
   width: 15%;
 }
 
