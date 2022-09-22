@@ -275,6 +275,7 @@ button.iconcontainer:hover {
 }
 
 #sign-up-view form {
+  width: 90%;
   display: flex;
   flex-direction: column;
   font-size: 0.9em;
@@ -291,6 +292,7 @@ select {
   padding: 5px;
   margin-bottom: 7px;
   background-color: var(--light-grey);
+  font-size: 1em;
 }
 
 #sign-up-view > div > form input[type="file"] {
