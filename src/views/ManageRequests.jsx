@@ -13,7 +13,7 @@ export default function ManageRequests() {
   const myForm = useRef();
   const [errorMessage, setErrorMessage] = useState(undefined);
   const [errorMessage2, setErrorMessage2] = useState(undefined);
-  document.title = `Iron Co-Workers | Requests`
+  document.title = `Iron Co-Workers | Requests`;
 
   useEffect(() => {
     const getData = async () => {
@@ -57,7 +57,7 @@ export default function ManageRequests() {
           headers: { Authorization: `Bearer ${storedToken}` },
         }
       );
-      toast.success("Action execute successfully", {duration: 2800});
+      toast.success("Action execute successfully", { duration: 2800 });
       window.location.reload();
     } catch (error) {
       setErrorMessage(error.response.data.error);
@@ -69,7 +69,7 @@ export default function ManageRequests() {
       await axios.delete(`${process.env.REACT_APP_API_URL}/requests/${id}`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       });
-      toast.success("Request deleted successfully", {duration: 2800});
+      toast.success("Request deleted successfully", { duration: 2800 });
       window.location.reload();
     } catch (error) {
       setErrorMessage2(error.response.data.error);

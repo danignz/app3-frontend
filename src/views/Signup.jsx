@@ -19,7 +19,7 @@ export default function Signup() {
   const [passwordControl, setPasswordControl] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
   const navigate = useNavigate();
-  document.title = `Iron Co-Workers | Sign Up`
+  document.title = `Iron Co-Workers | Sign Up`;
 
   const handleChange = (e) => {
     setUser((prev) => {
@@ -96,106 +96,106 @@ export default function Signup() {
 
   return (
     <div id="sign-up-view" className="backgroundcolor">
-    <div>
-      <h2>Create an account</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Full name</label>
-        <input
-          required
-          type="text"
-          name="fullName"
-          value={user.fullName}
-          onChange={handleChange}
-          placeholder="e.g.: John Doe"
-        />
-        <label>Email</label>
-        <input
-          required
-          type="email"
-          name="email"
-          value={user.email}
-          onChange={handleChange}
-          placeholder="mail@example.com"
-        />
-        <label>Password</label>
-        <input
-          required
-          type="password"
-          name="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="MySecurePassword1234"
-        />
-        <label>Repeat the password</label>
-        <input
-          required
-          type="password"
-          name="passwordControl"
-          value={passwordControl}
-          onChange={(e) => setPasswordControl(e.target.value)}
-          placeholder="MySecurePassword1234"
-        />
-        <label>Profile picture</label>
-        <input type="file" onChange={(e) => handleFileUpload(e)} />
-        <label>Profession</label>
-        <select
-          value={user.profession}
-          name="profession"
-          onChange={handleChange}
-        >
-          {enumValues &&
-            enumValues.profession.map((element) => (
-              <option key={element} value={element}>
-                {element}
-              </option>
-            ))}
-        </select>
-        <label>Location</label>
-        <select value={user.location} name="location" onChange={handleChange}>
-          {enumValues &&
-            enumValues.location.map((element) => (
-              <option key={element} value={element}>
-                {element}
-              </option>
-            ))}
-        </select>
-        <label>Headline</label>
-        <input
-          required
-          type="text"
-          name="headLine"
-          value={user.headLine}
-          onChange={handleChange}
-          placeholder="e.g.: Frontend and Mobile developer"
-        />
-        <label>About</label>
-        <textarea
-          required
-          rows="4"
-          cols="50"
-          name="about"
-          value={user.about}
-          onChange={handleChange}
-          placeholder="e.g.: I am a Front End Developer with experience building and maintaining websites in the E-commerce industry..."
-        ></textarea>
-        <label>Social Media Links (maximum 3)</label>
-        <input
-          type="text"
-          name="contactInfo"
-          value={user.contactInfo}
-          onChange={handleChange}
-          placeholder="https://linkedin.es/example,https://twitter.com/example"
-        />
-        <div>
-        <button className="btn-common" type="submit">Register</button>
-        <button className="btn-common" onClick={() => navigate(`/`)}>
-        {String.fromCharCode(8592)} Back
-      </button>
-        </div>
-
-      </form>
-      {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-
+      <div>
+        <h2>Create an account</h2>
+        <form onSubmit={handleSubmit}>
+          <label>Full name</label>
+          <input
+            required
+            type="text"
+            name="fullName"
+            value={user.fullName}
+            onChange={handleChange}
+            placeholder="e.g.: John Doe"
+          />
+          <label>Email</label>
+          <input
+            required
+            type="email"
+            name="email"
+            value={user.email}
+            onChange={handleChange}
+            placeholder="mail@example.com"
+          />
+          <label>Password</label>
+          <input
+            required
+            type="password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="MySecurePassword1234"
+          />
+          <label>Repeat the password</label>
+          <input
+            required
+            type="password"
+            name="passwordControl"
+            value={passwordControl}
+            onChange={(e) => setPasswordControl(e.target.value)}
+            placeholder="MySecurePassword1234"
+          />
+          <label>Profile picture</label>
+          <input type="file" onChange={(e) => handleFileUpload(e)} />
+          <label>Profession</label>
+          <select
+            value={user.profession}
+            name="profession"
+            onChange={handleChange}
+          >
+            {enumValues &&
+              enumValues.profession.map((element) => (
+                <option key={element} value={element}>
+                  {element}
+                </option>
+              ))}
+          </select>
+          <label>Location</label>
+          <select value={user.location} name="location" onChange={handleChange}>
+            {enumValues &&
+              enumValues.location.map((element) => (
+                <option key={element} value={element}>
+                  {element}
+                </option>
+              ))}
+          </select>
+          <label>Headline</label>
+          <input
+            required
+            type="text"
+            name="headLine"
+            value={user.headLine}
+            onChange={handleChange}
+            placeholder="e.g.: Frontend and Mobile developer"
+          />
+          <label>About</label>
+          <textarea
+            required
+            rows="4"
+            cols="50"
+            name="about"
+            value={user.about}
+            onChange={handleChange}
+            placeholder="e.g.: I am a Front End Developer with experience building and maintaining websites in the E-commerce industry..."
+          ></textarea>
+          <label>Social Media Links (maximum 3)</label>
+          <input
+            type="text"
+            name="contactInfo"
+            value={user.contactInfo}
+            onChange={handleChange}
+            placeholder="https://linkedin.es/example,https://twitter.com/example"
+          />
+          <div>
+            <button className="btn-common" type="submit">
+              Register
+            </button>
+            <button className="btn-common" onClick={() => navigate(`/`)}>
+              {String.fromCharCode(8592)} Back
+            </button>
+          </div>
+        </form>
+        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
       </div>
     </div>
   );

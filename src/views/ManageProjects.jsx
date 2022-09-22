@@ -10,8 +10,8 @@ export default function ManageProjects() {
   const storedToken = localStorage.getItem("authToken");
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
-  document.title = `Iron Co-Workers | Projects`
-  
+  document.title = `Iron Co-Workers | Projects`;
+
   useEffect(() => {
     const getData = async () => {
       try {

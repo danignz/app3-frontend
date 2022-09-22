@@ -318,23 +318,72 @@ select {
   background-color: var(--hoover-green);
 }
 
-/* EditProfile View */
+/* Edit Profile View */
 
-#edit-profile form {
+#edit-profile-view {
+  width: 100vw;
+  height: calc(100vh - 60px);
+  padding: 1%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
 }
 
-#edit-profile button {
+#edit-profile-view > div {
+  width: 600px;
+  height: 88vh;
+  background-color: var(--white);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 5px 2px var(--strong-grey);
+}
+
+#edit-profile-view > div > img {
+  width: 75px;
+  height: 95px;
+  border-radius: 50%;
+  object-fit: fill;
+}
+
+#edit-profile-view h2 {
+  margin-bottom: 5px;
+}
+
+#edit-profile-view form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9em;
+}
+
+#edit-profile-view > div > form input:not([type="file"]),
+textarea,
+select {
+  padding: 5px;
+  margin-bottom: 7px;
+  background-color: var(--light-grey);
+  font-size: 1em;
+}
+
+#edit-profile-view > div > form input[type="file"] {
+  padding: 5px;
+  margin-bottom: 7px;
+}
+
+#edit-profile-view button {
   width: 50%;
-  background-color: rgb(24, 129, 24);
+  background-color: var(--green);
+}
+
+#edit-profile-view button:hover {
+  background-color: var(--hoover-green);
 }
 
 /* Manager Requests View */
 
 #manage-colaborators-requests,
-#manage-my-requests,
-#edit-profile {
+#manage-my-requests {
   padding: 3%;
 }
 

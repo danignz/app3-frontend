@@ -47,7 +47,11 @@ export default function ProjectDetailsCard({ projectData }) {
 
       {projectData.leader._id !== user._id ? (
         <h4>
-          Leader:  <Link to={`/user/${projectData.leader._id}`}>{projectData.leader.fullName}</Link> [{projectData.leader.profession}]
+          Leader:{" "}
+          <Link to={`/user/${projectData.leader._id}`}>
+            {projectData.leader.fullName}
+          </Link>{" "}
+          [{projectData.leader.profession}]
         </h4>
       ) : (
         <h4 style={{ color: "green", fontWeight: "bold" }}>

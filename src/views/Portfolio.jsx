@@ -11,7 +11,7 @@ export default function Portfolio() {
   const [user, setUser] = useState({ profession: "" });
   const [enumValues, setEnumValues] = useState({ profession: [] });
   const { id } = useParams();
-  document.title = `Iron Co-Workers | Portfolio`
+  document.title = `Iron Co-Workers | Portfolio`;
 
   useEffect(() => {
     const getData = async () => {
@@ -56,7 +56,7 @@ export default function Portfolio() {
           (project) => project.leader._id === id && project.status === "Closed"
         );
         setProjectsTL(myProjectsTL);
-        
+
         const indexCollaborator = enumValues.profession.indexOf(
           user.profession
         );

@@ -9,7 +9,7 @@ export default function CreateRequest() {
   const storedToken = localStorage.getItem("authToken");
   const [errorMessage, setErrorMessage] = useState(undefined);
   const navigate = useNavigate();
-  document.title = `Iron Co-Workers | New Request`
+  document.title = `Iron Co-Workers | New Request`;
 
   useEffect(() => {
     const getData = async () => {

@@ -25,7 +25,7 @@ export default function EditProject() {
     projectUrl: "",
     onCampus: "",
   });
-  document.title = `Iron Co-Workers | Edit Project`
+  document.title = `Iron Co-Workers | Edit Project`;
 
   useEffect(() => {
     const getData = async () => {

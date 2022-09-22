@@ -8,7 +8,7 @@ export default function ProjectDetails() {
   const { id } = useParams();
   const [project, setProject] = useState(null);
   const storedToken = localStorage.getItem("authToken");
-  document.title = `Iron Co-Workers | Project Details`
+  document.title = `Iron Co-Workers | Project Details`;
 
   useEffect(() => {
     const getData = async () => {

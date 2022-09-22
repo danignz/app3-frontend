@@ -48,7 +48,7 @@ export default function CreateProject() {
   const [errorMessage, setErrorMessage] = useState(undefined);
   const navigate = useNavigate();
   const date = new Date();
-  document.title = `Iron Co-Workers | New Project`
+  document.title = `Iron Co-Workers | New Project`;
 
   const handleChange = (e) => {
     setProject((prev) => {
