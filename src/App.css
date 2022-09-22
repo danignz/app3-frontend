@@ -478,6 +478,92 @@ button.iconcontainer:hover {
   background-color: var(--hoover-green);
 }
 
+/* User Details View */
+
+#user-details-view {
+  padding: 1%;
+  width: 100vw;
+  height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* User Details Card */
+
+#user-details-card {
+  border: 1px solid rgb(0, 0, 0);
+  width: 50%;
+  box-shadow: 0 0 5px 2px var(--strong-grey);
+  transition: 0.3s;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: var(--white);
+}
+
+#user-details-card > div:first-child {
+  border-radius: 20px 20px 0 0;
+  height: 220px;
+  width: 100%;
+  display: flex;
+}
+
+#user-details-card #avatar-image {
+  height: 220px;
+  width: 145px;
+}
+
+#user-details-card #avatar-image img {
+  height: 220px;
+  width: 145px;
+  border-radius: 20px 0 0 0;
+}
+
+#user-details-card #avatar-info {
+  height: 220px;
+  width: calc(100% - 145px);
+  padding: 10px;
+  background-image: url("../src/images/userbackground.png");
+  border-radius: 20px 20px 0 0;
+  background-size: cover;
+}
+
+#user-details-card #avatar-info p,
+#user-details-card #avatar-info h2 {
+  color: var(--black);
+  font-weight: bold;
+}
+
+#user-details-card > div:nth-child(2) {
+  width: 100%;
+  padding: 3%;
+}
+
+#user-details-card > div:nth-child(2) img {
+  height: 50px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+#user-details-card #card-data > button {
+  width: 20%;
+  background-color: var(--green);
+  margin-right: 30px;
+}
+
+#user-details-card #card-data > button:hover {
+  background-color: var(--hoover-green);
+}
+
+#user-details-card #card-data button:last-child {
+  width: 20%;
+  background-color: var(--dark-blue);
+}
+
+#user-details-card #card-data button:last-child:hover {
+  background-color: var(--hoover-blue);
+}
+
 /* Manager Requests View */
 
 #manage-colaborators-requests,
@@ -670,37 +756,6 @@ th {
   color: white;
   font-weight: bold;
   background-color: rgb(5, 5, 5);
-  border-radius: 10px;
-  border: none;
-}
-
-#user-details {
-  padding: 3%;
-}
-
-#user-details-card {
-  padding: 3%;
-  border: 1px solid rgb(0, 0, 0);
-  width: 80%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  margin: 10px;
-  border-radius: 20px;
-}
-
-#user-details-card p {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-#user-details-card button {
-  width: 200px;
-  height: 40px;
-  margin-top: 10px;
-  font-size: 1em;
-  color: white;
-  font-weight: bold;
-  background-color: blue;
   border-radius: 10px;
   border: none;
 }

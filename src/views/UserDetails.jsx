@@ -30,8 +30,7 @@ export default function UserDetails() {
   return (
     <div className="backgroundcolor">
       <Navbar />
-      <div id="user-details">
-        <h2>User details</h2>
+      <div id="user-details-view">
         {user && <UserDetailsCard userData={user} />}
         {!user && <p>User not found</p>}
       </div>
