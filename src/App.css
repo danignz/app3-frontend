@@ -759,7 +759,7 @@ button.iconcontainer:hover {
 
 #manage-colaborators-requests,
 #manage-my-requests {
-  padding: 2% 1% 2% 1%;
+  padding: 2% 4% 2% 4%;
   width: 50vw;
   display: flex;
   flex-direction: column;
@@ -788,8 +788,8 @@ button.iconcontainer:hover {
 }
 
 #delete-req-btn {
-  width: 42px;
-  height: 42px;
+  width: 30px;
+  height: 30px;
   background-image: url("../src/images/cancelbtn.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -826,6 +826,52 @@ button.iconcontainer:hover {
   padding: 7px;
   font-size: 1.1em;
   border-radius: 5px;
+}
+
+/* Create Request View */
+
+#create-request {
+  padding: 3%;
+  width: 100vw;
+  height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+}
+
+#create-request .result-card-container {
+  border: 1px solid black;
+  height: 250px;
+  padding: 40px;
+  box-shadow: 0 0 5px 2px var(--strong-grey);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#create-request h2 {
+  margin-bottom: 20px;
+}
+
+#create-request button.view-req-btn {
+  width: 230px;
+  height: 40px;
+  margin-top: 20px;
+  background-color: var(--dark-blue);
+}
+
+#create-request button.back-btn {
+  width: 100px;
+  height: 40px;
+  margin-top: 20px;
+  background-color: rgb(5, 5, 5);
+}
+
+#create-request button.view-req-btn:hover {
+  background-color: var(--hoover-blue);
+}
+
+#create-request button.back-btn:hover {
+  background-color: var(--hoover-black);
 }
 
 /* Main View */
@@ -897,31 +943,6 @@ button.iconcontainer:hover {
 #main-view div:first-child > button:first-child:hover {
   background-color: #7ee682;
   color: rgb(173, 98, 0);
-}
-
-/* Create Request View */
-
-#create-request {
-  padding: 3%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#create-request h2 {
-  margin-bottom: 20px;
-}
-
-#create-request button {
-  width: 200px;
-  height: 40px;
-  margin-top: 40px;
-  font-size: 1em;
-  color: white;
-  font-weight: bold;
-  background-color: rgb(5, 5, 5);
-  border-radius: 10px;
-  border: none;
 }
 
 #manage-projects-view {
