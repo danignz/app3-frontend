@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import Navbar from "../components/Navbar";
 import axios from "axios";
+import inputicon from "../images/input.png";
+import outputicon from "../images/output.png";
 
 export default function ManageRequests() {
   const [myRequests, setMyRequests] = useState([]);
@@ -79,141 +81,167 @@ export default function ManageRequests() {
   return (
     <div className="backgroundcolor">
       <Navbar />
-      <div id="manage-colaborators-requests">
-        <h2>Collaborators who want to join to your project</h2>
-        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-        {incomingRequests.length !== 0 && (
-          <table>
-            <thead>
-              <tr>
-                <th>User</th>
-                <th>Project</th>
-                <th>Profession</th>
-                <th>Created</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {incomingRequests.map((elem) => {
-                return (
-                  <tr key={elem._id}>
-                    <td>
-                      <Link to={`/user/${elem.user._id}`}>
-                        <img
-                          height={60}
-                          src={elem.user.profileImage}
-                          className="Picture"
-                          alt="Pic of userr"
-                        />
-                        <p>{elem.user.fullName}</p>
-                      </Link>
-                    </td>
-                    <td>
-                      <Link to={`/project/${elem.project._id}`}>
-                        {elem.project.name}
-                      </Link>
-                    </td>
-                    <td>{elem.user.profession}</td>
-                    <td>{new Date(elem.createdAt).toLocaleString()}</td>
-                    <td>
-                      <form
-                        onSubmit={(e) => handleSubmit(e, elem._id)}
-                        ref={myForm}
-                      >
-                        <button
-                          type="submit"
-                          id="1"
-                          onClick={(e) =>
-                            (myForm.current.buttonId = e.target.id)
-                          }
-                          name="status"
-                          value="Accepted"
-                        >
-                          Accept
-                        </button>
-                        <button
-                          type="submit"
-                          id="2"
-                          onClick={(e) =>
-                            (myForm.current.buttonId = e.target.id)
-                          }
-                          name="status"
-                          value="Denied"
-                        >
-                          Reject
-                        </button>
-                      </form>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        )}
-        {incomingRequests.length === 0 && (
-          <p>You don't have incoming requests</p>
-        )}
-      </div>
-
-      <div id="manage-my-requests">
-        <h2>Status of your request to join a project</h2>
-        {errorMessage2 && <p style={{ color: "red" }}>{errorMessage2}</p>}
-        {myRequests.length !== 0 && (
-          <table>
-            <thead>
-              <tr>
-                <th>Leader</th>
-                <th>Project</th>
-                <th>Created</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              {myRequests.map((elem) => {
-                return (
-                  <tr key={elem._id}>
-                    <td>
-                      <Link to={`/user/${elem.project.leader._id}`}>
-                        <img
-                          height={60}
-                          src={elem.project.leader.profileImage}
-                          className="Picture"
-                          alt="Pic of team leader"
-                        />
-                        <p>{elem.project.leader.fullName}</p>
-                      </Link>
-                    </td>
-                    <td>
-                      <Link to={`/project/${elem.project._id}`}>
-                        {elem.project.name}
-                      </Link>
-                    </td>
-                    <td>{new Date(elem.createdAt).toLocaleString()}</td>
-                    <td>
-                      {elem.status === "Pending" && (
-                        <p className={`status-yellow`}>{elem.status}</p>
-                      )}
-                      {elem.status === "Denied" && (
-                        <p className={`status-red`}>{elem.status}</p>
-                      )}
-                      {elem.status === "Accepted" && (
-                        <p className={`status-green`}>{elem.status}</p>
-                      )}
-                    </td>
-                    {elem.status === "Pending" && (
+      <div id="manage-requests-view">
+        <div id="manage-colaborators-requests">
+          <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
+            <h2>Collaborators who want to join to your project</h2>
+            <img
+              style={{ display: "inline", height: 40, width: 40 }}
+              src={inputicon}
+              alt="Incomming icon"
+            />
+          </div>
+          {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+          {incomingRequests.length !== 0 && (
+            <table>
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Project</th>
+                  <th>Profession</th>
+                  <th>Created</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {incomingRequests.map((elem) => {
+                  return (
+                    <tr key={elem._id}>
                       <td>
-                        <button onClick={() => handleRequestDelete(elem._id)}>
-                          Delete
-                        </button>
+                        <Link to={`/user/${elem.user._id}`}>
+                          <img
+                            height={75}
+                            src={elem.user.profileImage}
+                            className="Picture"
+                            alt="Pic of userr"
+                          />
+                          <p>{elem.user.fullName}</p>
+                        </Link>
                       </td>
-                    )}
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        )}
-        {myRequests.length === 0 && <p>You don't have created any request</p>}
+                      <td>
+                        <Link to={`/project/${elem.project._id}`}>
+                          {elem.project.name}
+                        </Link>
+                      </td>
+                      <td>{elem.user.profession}</td>
+                      <td>{new Date(elem.createdAt).toLocaleString()}</td>
+                      <td>
+                        <form
+                          onSubmit={(e) => handleSubmit(e, elem._id)}
+                          ref={myForm}
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                          }}
+                        >
+                          <button
+                            className="btn-common"
+                            type="submit"
+                            id="1"
+                            onClick={(e) =>
+                              (myForm.current.buttonId = e.target.id)
+                            }
+                            name="status"
+                            value="Accepted"
+                          >
+                            Accept
+                          </button>
+                          <button
+                            className="btn-common"
+                            type="submit"
+                            id="2"
+                            onClick={(e) =>
+                              (myForm.current.buttonId = e.target.id)
+                            }
+                            name="status"
+                            value="Denied"
+                          >
+                            Reject
+                          </button>
+                        </form>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          )}
+          {incomingRequests.length === 0 && (
+            <p>You don't have incoming requests</p>
+          )}
+        </div>
+
+        <div id="manage-my-requests">
+          <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
+            <h2>Status of your requests to join a project</h2>
+            <img
+              style={{ display: "inline", height: 40, width: 40 }}
+              src={outputicon}
+              alt="Team collaboration icon"
+            />
+          </div>
+
+          {errorMessage2 && <p style={{ color: "red" }}>{errorMessage2}</p>}
+          {myRequests.length !== 0 && (
+            <table>
+              <thead>
+                <tr>
+                  <th>Leader</th>
+                  <th>Project</th>
+                  <th>Created</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {myRequests.map((elem) => {
+                  return (
+                    <tr key={elem._id}>
+                      <td>
+                        <Link to={`/user/${elem.project.leader._id}`}>
+                          <img
+                            height={75}
+                            src={elem.project.leader.profileImage}
+                            className="Picture"
+                            alt="Pic of team leader"
+                          />
+                          <p>{elem.project.leader.fullName}</p>
+                        </Link>
+                      </td>
+                      <td>
+                        <Link to={`/project/${elem.project._id}`}>
+                          {elem.project.name}
+                        </Link>
+                      </td>
+                      <td>{new Date(elem.createdAt).toLocaleString()}</td>
+                      <td>
+                        {elem.status === "Pending" && (
+                          <p className={`status-yellow`}>{elem.status}</p>
+                        )}
+                        {elem.status === "Denied" && (
+                          <p className={`status-red`}>{elem.status}</p>
+                        )}
+                        {elem.status === "Accepted" && (
+                          <p className={`status-green`}>{elem.status}</p>
+                        )}
+                      </td>
+                      {elem.status === "Pending" && (
+                        <td>
+                          <button
+                            id="delete-req-btn"
+                            className="btn-common"
+                            onClick={() => handleRequestDelete(elem._id)}
+                          ></button>
+                        </td>
+                      )}
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          )}
+          {myRequests.length === 0 && <p>You don't have created any request</p>}
+        </div>
       </div>
     </div>
   );
