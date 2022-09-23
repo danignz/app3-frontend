@@ -3,6 +3,8 @@ import Navbar from "../components/Navbar";
 import ProjectCard from "../components/ProjectCard";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import teamleadicon from "../images/teamleadicon.png";
+import collaboratoricon from "../images/collaboratoricon.png";
 
 export default function Portfolio() {
   const [projectsTL, setProjectsTL] = useState([]);
@@ -82,25 +84,49 @@ export default function Portfolio() {
     <div className="backgroundcolor">
       <Navbar />
       <div id="portfolio-view">
-        <h2>Projects as a collaborator</h2>
+        <div>
+          <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
+            <h2>Projects as a collaborator</h2>
+            <img
+              style={{ display: "inline", height: 65, width: 65 }}
+              src={collaboratoricon}
+              alt="Team collaboration icon"
+            />
+          </div>
 
-        {projectsColaborator.length === 0 && (
-          <p>There is not projects closed as a collaborator.</p>
-        )}
-        {projectsColaborator.length !== 0 &&
-          projectsColaborator.map((project) => {
-            return <ProjectCard key={project._id} projectData={project} />;
-          })}
+          {projectsColaborator.length === 0 && (
+            <p style={{ fontSize: 18 }}>
+              {" "}
+              - There is not projects closed as a collaborator.
+            </p>
+          )}
+          {projectsColaborator.length !== 0 &&
+            projectsColaborator.map((project) => {
+              return <ProjectCard key={project._id} projectData={project} />;
+            })}
+        </div>
+        <div>
+          <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
+            <h2>Projects as a Team Lead</h2>
 
-        <h2>Projects as a Team Lead</h2>
+            <img
+              style={{ display: "inline", height: 65, width: 65 }}
+              src={teamleadicon}
+              alt="Team Lead icon"
+            />
+          </div>
 
-        {projectsTL.length === 0 && (
-          <p>There is not projects closed as a team lead.</p>
-        )}
-        {projectsTL.length !== 0 &&
-          projectsTL.map((project) => {
-            return <ProjectCard key={project._id} projectData={project} />;
-          })}
+          {projectsTL.length === 0 && (
+            <p style={{ fontSize: 18 }}>
+              {" "}
+              - There is not projects closed as a team lead.
+            </p>
+          )}
+          {projectsTL.length !== 0 &&
+            projectsTL.map((project) => {
+              return <ProjectCard key={project._id} projectData={project} />;
+            })}
+        </div>
       </div>
     </div>
   );

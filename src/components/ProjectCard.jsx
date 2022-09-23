@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
 export default function ProjectCard({ projectData }) {
@@ -8,35 +8,66 @@ export default function ProjectCard({ projectData }) {
 
   return (
     <div id="project-card">
-      <h2>{projectData.name}</h2>
+      <div>
+        <div id="info-project">
+          <h2>{projectData.name}</h2>
+          <br />
+          {projectData.leader._id !== user._id ? (
+            <p>
+              <strong>Leader: </strong>
+              <Link to={`/user/${projectData.leader._id}`}>
+                {projectData.leader.fullName}
+              </Link>{" "}
+              [{projectData.leader.profession}]
+            </p>
+          ) : (
+            <p style={{ color: "green", fontWeight: "bold" }}>
+              {" "}
+              You are the leader
+            </p>
+          )}
 
-      {projectData.leader._id !== user._id ? (
-        <h4>
-          Leader: {projectData.leader.fullName} {projectData.leader.profession}
-        </h4>
-      ) : (
-        <h4 style={{ color: "green", fontWeight: "bold" }}>
-          {" "}
-          You are the leader
-        </h4>
-      )}
+          <p>
+            <strong>Start: </strong>
+            {new Date(projectData["startDate"]).toDateString()}
+          </p>
+          <p>
+            <strong>End: </strong>
+            {new Date(projectData["endDate"]).toDateString()}
+          </p>
 
-      <img
-        height={250}
-        width={450}
-        src={projectData.projectImage}
-        alt={`Pic of ${projectData.name}`}
-      />
-      {/* <p>{projectData.description}</p> */}
-      {projectData.description.split("\n").map((sentence, index) => (
+          <p>
+            <strong>On campus? </strong>
+            {projectData.onCampus}
+          </p>
+        </div>
+        <div id="container-project-image">
+          <img
+            height={200}
+            width={400}
+            src={projectData.projectImage}
+            alt={`Pic of ${projectData.name}`}
+          />
+          {/* <p>{projectData.description}</p> */}
+          {/* {projectData.description.substr(0, 250) + "...".split("\n").map((sentence, index) => (
         <p key={index}>{sentence}</p>
-      ))}
-      <p>Start: {new Date(projectData["startDate"]).toDateString()}</p>
-      <p>End: {new Date(projectData["endDate"]).toDateString()}</p>
+      ))} */}
+        </div>
+      </div>
+      <div>
+        <p style={{ textAlign: "justify" }}>
+          {" "}
+          {projectData.description.substr(0, 250) + "..."}
+        </p>
 
-      <button onClick={() => navigate(`/project/${projectData._id}`)}>
-        Detail
-      </button>
+        <button
+          id="detail-btn"
+          className="btn-common"
+          onClick={() => navigate(`/project/${projectData._id}`)}
+        >
+          Detail
+        </button>
+      </div>
     </div>
   );
 }
