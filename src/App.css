@@ -259,14 +259,14 @@ button.iconcontainer:hover {
 #sign-up-view {
   width: 100vw;
   height: 100vh;
-  padding: 3%;
+  padding: 1%;
   display: flex;
   justify-content: center;
 }
 
 #sign-up-view > div {
   width: 450px;
-  height: 88vh;
+  height: 94%;
   background-color: var(--white);
   padding: 15px;
   display: flex;
