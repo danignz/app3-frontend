@@ -947,70 +947,93 @@ li {
 /* Main View */
 
 #main-view {
-  padding-right: 1%;
-  padding-left: 1%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  gap: 20px;
-}
-
-#main-view #main-container {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
+  width: 100vw;
+  min-height: 100vh;
 }
 
 #main-view > div:first-child {
-  width: 320px;
-  height: 500px;
-  margin-top: 40px;
+  margin-top: 35px;
+  padding: 2% 0 2% 0%;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+#main-view > div:nth-child(2) {
+  padding: 2%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#list-project-container #project-card {
+  margin: 0 auto 25px auto;
+}
+
+#main-view select,
+#main-view input {
+  padding: 5px;
+  margin-bottom: 7px;
+  background-color: var(--light-grey);
+  font-size: 1em;
 }
 
 #main-view aside {
   margin-top: 20px;
   padding: 0 20px 0 20px;
-  width: 250px;
+  width: 270px;
   height: 500px;
   border: 1px solid grey;
   display: flex;
   flex-direction: column;
+  background-color: white;
+  box-shadow: 0 0 5px 2px var(--strong-grey);
+}
+
+#main-view aside h3 {
+  margin: 22px 0 5px 0px;
 }
 
 #main-view aside button {
-  width: 100px;
+  height: 40px;
+  width: 50%;
+  margin-top: 10px;
+  font-size: 1em;
+  color: black;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px solid gray;
 }
 
-#main-view {
-  /* background-color: #7ee682; */
-  width: 97%;
+#main-view aside button:hover {
+  color: rgb(255, 255, 255);
+  background-color: var(--dark-grey);
 }
 
 #main-view div:first-child > button:first-child,
 #main-view div:first-child > button:nth-child(2) {
-  width: 250px;
-  height: 40px;
-  margin-top: 10px;
-  font-size: 1em;
-  color: white;
-  font-weight: bold;
-  background-color: rgb(24, 129, 24);
-  border-radius: 10px;
-  border: none;
+  width: 230px;
+  background-color: rgb(0, 95, 0);
   margin: 20px;
+  height: 50px;
+  font-size: 1.2em;
 }
 
 #main-view div:first-child > button:nth-child(2) {
-  background-color: rgb(1, 24, 87);
+  background-color: rgba(16, 0, 107, 0.792);
 }
 
 #main-view div:first-child > button:nth-child(2):hover {
-  background-color: rgb(50, 99, 235);
-  color: rgb(173, 98, 0);
+  background-color: rgba(71, 49, 197, 0.792);
 }
 
 #main-view div:first-child > button:first-child:hover {
-  background-color: #7ee682;
-  color: rgb(173, 98, 0);
+  background-color: rgb(0, 154, 0);
 }

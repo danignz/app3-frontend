@@ -86,7 +86,7 @@ export default function ManageRequests() {
           <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
             <h2>Collaborators who want to join to your project</h2>
             <img
-              style={{ display: "inline", height: 40, width: 40 }}
+              style={{ display: "inline", height: 55, width: 55 }}
               src={inputicon}
               alt="Incomming icon"
             />
@@ -168,7 +168,10 @@ export default function ManageRequests() {
             </table>
           )}
           {incomingRequests.length === 0 && (
-            <p>You don't have incoming requests</p>
+            <p style={{ color: "black", fontSize: 20 }}>
+              {" "}
+              ⚠️ You don't have incoming requests
+            </p>
           )}
         </div>
 
@@ -176,7 +179,7 @@ export default function ManageRequests() {
           <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
             <h2>Status of your requests to join a project</h2>
             <img
-              style={{ display: "inline", height: 40, width: 40 }}
+              style={{ display: "inline", height: 55, width: 55 }}
               src={outputicon}
               alt="Team collaboration icon"
             />
@@ -240,7 +243,12 @@ export default function ManageRequests() {
               </tbody>
             </table>
           )}
-          {myRequests.length === 0 && <p>You don't have created any request</p>}
+          {myRequests.length === 0 && (
+            <p style={{ color: "black", fontSize: 20 }}>
+              {" "}
+              ⚠️ You don't have created any request
+            </p>
+          )}
         </div>
       </div>
     </div>

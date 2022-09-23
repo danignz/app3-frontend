@@ -131,22 +131,27 @@ export default function Main() {
       <Navbar />
       <div id="main-view">
         <div>
-          <h3>Welcome, {user.fullName}</h3>
+          <h2>
+            Welcome,{" "}
+            <span style={{ color: "dimgray" }}>
+              {user.fullName.split(" ")[0]}
+            </span>
+          </h2>
           <aside>
-            <h4>Filter projects:</h4>
+            <h3>Filter projects:</h3>
             <input
               type="text"
-              placeholder="🔎 by project name"
+              placeholder="🔎 by name"
               onChange={(e) => handleSearch(e)}
             />
 
-            <label>Work modality:</label>
+            <h3>By work modality:</h3>
             <select name="onCampus" onChange={handleChangeWorkModality}>
               <option value="ALL">ALL</option>
               <option value="No">REMOTE</option>
               <option value="Yes">ON CAMPUS</option>
             </select>
-            <h4>Sort projects:</h4>
+            <h3>Sort projects:</h3>
             <button onClick={handleSortByName}>By name</button>
             <button onClick={handleSortByStartDate}>Start date</button>
             <button onClick={handleSortByEndDate}>End date</button>
@@ -154,18 +159,24 @@ export default function Main() {
         </div>
         <div id="main-container">
           <div>
-            <button onClick={getOpenProjects}>Projects Recruiting</button>
-            <button onClick={getClosedProjects}>Projects Finished</button>
+            <button className="btn-common" onClick={getOpenProjects}>
+              Projects Recruiting
+            </button>
+            <button className="btn-common" onClick={getClosedProjects}>
+              Projects Finished
+            </button>
           </div>
           {projectsFiltered.length === 0 && (
             <p>
               Unfortunately there are no projects that match the search criteria
             </p>
           )}
-          {projectsFiltered.length !== 0 &&
-            projectsFiltered.map((project) => {
-              return <ProjectCard key={project._id} projectData={project} />;
-            })}
+          <div id="list-project-container">
+            {projectsFiltered.length !== 0 &&
+              projectsFiltered.map((project) => {
+                return <ProjectCard key={project._id} projectData={project} />;
+              })}
+          </div>
         </div>
       </div>
     </div>

@@ -57,7 +57,7 @@ export default function ManageProjects() {
         </ol>
         <div id="projects-container">
 
-        {projects.length === 0 && <p>You have not created any project.</p>}
+        {projects.length === 0 && <p style={{ color: "black", fontSize: 20 }}> ⚠️ You have not created any project yet.</p>}
         {projects.length !== 0 &&
           projects.map((project) => {
             return <ProjectCard key={project._id} projectData={project} />;

@@ -88,16 +88,14 @@ export default function Portfolio() {
           <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
             <h2>Projects as a collaborator</h2>
             <img
-              style={{ display: "inline", height: 65, width: 65 }}
+              style={{ display: "inline", height: 55, width: 55 }}
               src={collaboratoricon}
               alt="Team collaboration icon"
             />
           </div>
 
           {projectsColaborator.length === 0 && (
-            <p style={{ fontSize: 18 }}>
-              {" "}
-              - There is not projects closed as a collaborator.
+            <p style={{ color: "black", fontSize: 20, paddingTop: 25 }}> ⚠️ There is not projects closed as a collaborator.
             </p>
           )}
           {projectsColaborator.length !== 0 &&
@@ -110,16 +108,14 @@ export default function Portfolio() {
             <h2>Projects as a Team Lead</h2>
 
             <img
-              style={{ display: "inline", height: 65, width: 65 }}
+              style={{ display: "inline", height: 55, width: 55 }}
               src={teamleadicon}
               alt="Team Lead icon"
             />
           </div>
 
           {projectsTL.length === 0 && (
-            <p style={{ fontSize: 18 }}>
-              {" "}
-              - There is not projects closed as a team lead.
+            <p style={{ color: "black", fontSize: 20, paddingTop: 25 }}> ⚠️ There is not projects closed as a team lead.
             </p>
           )}
           {projectsTL.length !== 0 &&

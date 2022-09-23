@@ -35,7 +35,7 @@ export default function CreateRequest() {
         {request && (
           <div className="result-card-container">
             <h2>Your request have been successfully sended!</h2>
-            <p style={{ fontSize: 30, margin: "0 auto" }}>✅</p>
+            <p style={{ fontSize: 30 }}>✅</p>
             <button
               className="btn-common view-req-btn"
               onClick={() => navigate(`/manage-requests`)}
