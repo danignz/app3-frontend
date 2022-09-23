@@ -36,8 +36,8 @@ export default function ManageProjects() {
       <Navbar />
       <div id="manage-projects-view">
         <h2>Become a Team Lead!</h2>
-        <p>Lead a team and improve your skills creating amazing projects</p>
-        <button onClick={() => navigate(`/create-project`)}>Create</button>
+        <p>Lead a team and improve your skills creating amazing projects.</p>
+        <button className="btn-common" onClick={() => navigate(`/create-project`)}>Create</button>
         <hr />
         <h2>Manage your projects</h2>
         <p>
@@ -55,11 +55,15 @@ export default function ManageProjects() {
             <strong>Delete</strong> the project
           </li>
         </ol>
+        <div id="projects-container">
+
         {projects.length === 0 && <p>You have not created any project.</p>}
         {projects.length !== 0 &&
           projects.map((project) => {
             return <ProjectCard key={project._id} projectData={project} />;
           })}
+
+          </div>
       </div>
     </div>
   );

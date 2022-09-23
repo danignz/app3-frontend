@@ -93,7 +93,7 @@ export default function ManageRequests() {
           </div>
           {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
           {incomingRequests.length !== 0 && (
-            <table>
+            <table id="collaborators-table">
               <thead>
                 <tr>
                   <th>User</th>
@@ -184,7 +184,7 @@ export default function ManageRequests() {
 
           {errorMessage2 && <p style={{ color: "red" }}>{errorMessage2}</p>}
           {myRequests.length !== 0 && (
-            <table>
+            <table id="my-requests-table">
               <thead>
                 <tr>
                   <th>Leader</th>

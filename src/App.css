@@ -681,7 +681,11 @@ button.iconcontainer:hover {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background: linear-gradient(90deg, #e6e3dd 50%, hsl(40, 16%, 96%) 50%);
+  background: linear-gradient(
+    90deg,
+    rgb(223, 223, 223) 50%,
+    var(--light-grey) 50%
+  );
 }
 
 #portfolio-view > div:first-child,
@@ -754,7 +758,11 @@ button.iconcontainer:hover {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background: linear-gradient(90deg, #e6e3dd 50%, hsl(40, 16%, 96%) 50%);
+  background: linear-gradient(
+    90deg,
+    rgb(223, 223, 223) 50%,
+    var(--light-grey) 50%
+  );
 }
 
 #manage-colaborators-requests,
@@ -768,6 +776,7 @@ button.iconcontainer:hover {
 
 #manage-requests-view table {
   width: 90%;
+  border-collapse: collapse;
 }
 
 #manage-colaborators-requests > div:first-child,
@@ -797,11 +806,21 @@ button.iconcontainer:hover {
 
 #manage-requests-view td {
   text-align: center;
-  padding: 10px;
+  padding: 5px 10px 5px 10px;
+  background-color: white;
 }
 
 #manage-requests-view th {
   padding: 0 15px;
+  font-size: 18px;
+}
+
+#collaborators-table tbody td:nth-child(5) {
+  background-color: white;
+}
+
+#my-requests-table tbody td:nth-child(5) {
+  background-color: var(--light-grey);
 }
 
 #manage-requests-view .status-red {
@@ -874,6 +893,57 @@ button.iconcontainer:hover {
   background-color: var(--hoover-black);
 }
 
+/* Manage Projects */
+
+#manage-projects-view {
+  padding: 2% 4% 2% 4%;
+  list-style-position: inside;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+#manage-projects-view > p,
+li {
+  font-size: 18px;
+  margin: 5px 0px;
+}
+
+#manage-projects-view > h2 {
+  margin-bottom: 15px;
+}
+
+#manage-projects-view hr {
+  border: 1px solid rgb(196, 196, 196);
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#manage-projects-view > button {
+  width: 100px;
+  height: 40px;
+  margin-top: 5px;
+  background-color: var(--green);
+  margin-bottom: 20px;
+}
+
+#manage-projects-view > button:hover {
+  background-color: var(--hoover-green);
+}
+
+#projects-container {
+  margin: 0 auto;
+  align-self: center;
+  width: 85vw;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#projects-container #project-card {
+  width: 47%;
+}
+
 /* Main View */
 
 #main-view {
@@ -943,9 +1013,4 @@ button.iconcontainer:hover {
 #main-view div:first-child > button:first-child:hover {
   background-color: #7ee682;
   color: rgb(173, 98, 0);
-}
-
-#manage-projects-view {
-  padding: 3%;
-  list-style-position: inside;
 }
