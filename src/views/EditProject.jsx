@@ -241,46 +241,50 @@ export default function EditProject() {
             ></textarea>
 
             <label>- How many collaborators by rol?</label>
-            <p>{enumValues && enumValues.profession[0]}</p>
-            <input
-              type="number"
-              name="quantity"
-              value={webDevelopers.quantity}
-              min="0"
-              max="3"
-              onChange={handleChangeWebDevelopers}
-            ></input>
+            <div className="collaborators-number">
+              <div>
+                <p>{enumValues && enumValues.profession[0]}</p>
+                <input
+                  type="number"
+                  name="quantity"
+                  value={webDevelopers.quantity}
+                  min="0"
+                  max="3"
+                  onChange={handleChangeWebDevelopers}
+                ></input>
 
-            <p>{enumValues && enumValues.profession[1]}</p>
-            <input
-              type="number"
-              name="quantity"
-              value={uxuiDesigners.quantity}
-              min="0"
-              max="3"
-              onChange={handleUxUiDesigners}
-            ></input>
+                <p>{enumValues && enumValues.profession[1]}</p>
+                <input
+                  type="number"
+                  name="quantity"
+                  value={uxuiDesigners.quantity}
+                  min="0"
+                  max="3"
+                  onChange={handleUxUiDesigners}
+                ></input>
+              </div>
+              <div>
+                <p>{enumValues && enumValues.profession[2]}</p>
+                <input
+                  type="number"
+                  name="quantity"
+                  value={dataAnalysts.quantity}
+                  min="0"
+                  max="3"
+                  onChange={handleDataAnalysts}
+                ></input>
 
-            <p>{enumValues && enumValues.profession[2]}</p>
-            <input
-              type="number"
-              name="quantity"
-              value={dataAnalysts.quantity}
-              min="0"
-              max="3"
-              onChange={handleDataAnalysts}
-            ></input>
-
-            <p>{enumValues && enumValues.profession[3]}</p>
-            <input
-              type="number"
-              name="quantity"
-              value={cyberAnalysts.quantity}
-              min="0"
-              max="3"
-              onChange={handleCyberAnalysts}
-            ></input>
-
+                <p>{enumValues && enumValues.profession[3]}</p>
+                <input
+                  type="number"
+                  name="quantity"
+                  value={cyberAnalysts.quantity}
+                  min="0"
+                  max="3"
+                  onChange={handleCyberAnalysts}
+                ></input>
+              </div>
+            </div>
             <button className="btn-common" type="submit">
               Save changes
             </button>

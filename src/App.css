@@ -399,7 +399,7 @@ button.iconcontainer:hover {
 #create-project-view > div,
 #edit-project-view > div {
   width: 600px;
-  height: 90vh;
+  height: 80vh;
   background-color: var(--white);
   padding: 15px;
   display: flex;
@@ -470,6 +470,34 @@ button.iconcontainer:hover {
 #edit-project-view > div > form input[type="file"] {
   padding: 5px;
   margin-bottom: 7px;
+}
+
+#create-project-view .collaborators-number,
+#edit-project-view .collaborators-number {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: 150px;
+  padding: 20px 0;
+}
+
+#create-project-view .collaborators-number p,
+#edit-project-view .collaborators-number p {
+  width: 160px;
+}
+
+#create-project-view .collaborators-number > div:first-child,
+#edit-project-view .collaborators-number > div:first-child {
+  width: 70%;
+  height: 50%;
+}
+
+#create-project-view .collaborators-number > div:last-child,
+#edit-project-view .collaborators-number > div:last-child {
+  width: 70%;
+  height: 50%;
 }
 
 #create-project-view button,
