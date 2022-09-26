@@ -48,10 +48,6 @@ export default function ProjectCard({ projectData }) {
             src={projectData.projectImage}
             alt={`Pic of ${projectData.name}`}
           />
-          {/* <p>{projectData.description}</p> */}
-          {/* {projectData.description.substr(0, 250) + "...".split("\n").map((sentence, index) => (
-        <p key={index}>{sentence}</p>
-      ))} */}
         </div>
       </div>
       <div>

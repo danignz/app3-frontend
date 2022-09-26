@@ -76,9 +76,13 @@ export default function ProjectDetailsCard({ projectData }) {
           </p>
           <p>
             <strong>Website: </strong>
-            <Link to={`/${projectData.projectUrl}`}>
+            <a
+              href={`${projectData.projectUrl}`}
+              target="_blank"
+              rel="noreferrer"
+            >
               {projectData.projectUrl}
-            </Link>
+            </a>
           </p>
           <p>
             <strong>Status </strong>

@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import socialmediaicon from "../images/social-media.png";
 
@@ -38,10 +37,10 @@ export default function UserDetailsCard({ userData }) {
         {userData.contactInfo &&
           userData.contactInfo.split(",").map((link, index) => {
             return (
-              <Link key={index} to={`/${link}`}>
+              <a key={index} href={`${link}`} target="_blank" rel="noreferrer">
                 {link}
                 <br />
-              </Link>
+              </a>
             );
           })}
         <br />

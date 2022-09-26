@@ -88,7 +88,6 @@ export default function Navbar() {
             </NavLink>
           </li>
         )}
-        {/* {isLoggedIn && <li><button onClick={() => navigate(-1)}>{String.fromCharCode(8592)} Go back</button></li>} */}
         {isLoggedIn && (
           <li>
             <button className="iconcontainer" onClick={() => logOutUser()}>
